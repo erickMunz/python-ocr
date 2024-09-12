@@ -1,0 +1,222 @@
+
+#########################################
+
+Question: 201, —_
+
+You are loading CSV files from Cloud Storage to BigQuery. The files have known data quality issues, including mismatched data types, such as STRINGs and
+
+INT64s in the same column, and inconsistent formatting of values such as phone numbers or addresses. You need to create the data pipeline to maintain data quality and
+perform the required cleansing and transformation. What should you do?
+
+A. Use Data Fusion to transform the data before loading it into BigQuery. *** Correcta
+B. Use Data Fusion to convert the CSV files to a self-describing data format, such as AVRO, before loading the data to BigQuery.
+C. Load the CSV files into a staging table with the desired schema, perform the transformations with SQL, and then write the results to the final destination table.
+
+D. Create a table with the desired schema, load the CSV files into the table, and perform the transformations in place using SQL.
+
+‘Anything
+
+
+   
+#########################################A
+
+Question 202
+
+You are developing a new deep learning model that predicts a customer's likelihood to buy on your ecommerce site. After running an evaluation of the model against both
+the original training data and new test data, you find that your model is overfitting the data. You want to improve the accuracy of the model when predicting new data.
+
+What should you do?
+
+A. Increase the size of the training dataset, and increase the number of input features.
+B. Increase the size of the training dataset, and decrease the number of input features. *** Correcta
+C. Reduce the size of the training dataset, and increase the number of input features.
+
+D. Reduce the size of the training dataset, and decrease the number of input features.
+
+   
+
+   
+
+#########################################
+Question: 203 _
+
+You are implementing a chatbot to help an online retailer streamline their customer service. The chatbot must be able to respond to both text and voice inquiries.
+
+You are looking for a low-code or no-cade option, and you want to be able to easily train the chatbot to provide answers to keywords. What should you do?
+
+A. Use the Cloud Speech-to-Text API to build a Python application in App Engine.
+B. Use the Cloud Speech-to-Text API to build a Python application in a Compute Engine instance.
+C. Use Dialogflow for simple queries and the Cloud Speech-to-Text AP! for complex queries.
+
+D. Use Dialogflow to implement the chatbot, defining the intents based on the most common queries collected. *** Correcta
+
+######################################### 
+Question: 204 _
+
+An aerospace company uses a proprietary data format to store its flight data. You need to connect this new data source to BigQuery and stream the data into
+
+BigQuery. You want to efficiently import the data into BigQuery while consuming as few resources as possible. What should you do?
+
+A. Write a shell script that triggers a Cloud Function that performs periodic ETL batch jobs on the new data source.
+B. Use a standard Dataflow pipeline to store the raw data in BigQuery, and then transform the format later when the data is used.
+C. Use Apache Hive to write a Dataproc job that streams the data into BigQuery in CSV format.
+
+D. Use an Apache Beam custom connector to write a Dataflow pipeline that streams the data into BigQuery in Avro format. *** Correcta
+   
+######################################### 
+‘Question: 205 _
+
+An online brokerage company requires a high volume trade processing architecture. You need to create a secure queuing system that triggers jobs. The jobs will run in
+
+Google Cloud and call the company's Python API to execute trades. You need to efficiently implement a solution. What should you do?
+ 
+A. Use a Pub/Sub push subscription to trigger a Cloud Function to pass the data to the Python API. *** Correcta
+B. Write an application hosted on a Compute Engine instance that makes a push subscription to the Pub/Sub topic.
+C. Write an application that makes a queue in a NoSQL database.
+
+D. Use Cloud Composer to subscribe to a Pub/Sub topic and call the Python API.
+
+‘Anything
+   
+######################################### 
+206
+
+Your company wants to be able to retrieve large result sets of medical information from your current system, which has over 10 TBs in the database, and store the data in
+new tables for further query. The database must have a low-maintenance architecture and be accessible via SQL. You need to implement a cost-effective solution that
+can support data analytics for large result sets. What should you do?
+
+A. Use Cloud SQL, but first organize the data into tables. Use JOIN in queries to retrieve data.
+B. Use BigQuery as a data warehouse. Set output destinations for caching large queries. *** Correcta
+C. Use a MySQL cluster installed on a Compute Engine managed instance group for scalability.
+
+D. Use Cloud Spanner to replicate the data across regions. Normalize the data in a series of tables.
+
+######################################### 
+Question: 207 _
+
+You have 15 TB of data in your on-premises data center that you want to transfer to Google Cloud. Your data changes weekly and is stored in a POSIX-compliant source.
+
+The network operations team has granted you 500 Mbps bandwidth to the public internet. You want to follow Google-recommended practices to reliably transfer your data
+to Google Cloud on a weekly basis. What should you do?
+
+A. Use Cloud Scheduler to trigger the gsutil command. Use the -m parameter for optimal parallelism.
+B. Use Transfer Appliance to migrate your data into a Google Kubernetes Engine cluster, and then configure a weekly transfer job.
+C. Install Storage Transfer Service for on-premises data in your data center, and then configure a weekly transfer job. *** Correcta
+
+D. Install Storage Transfer Service for on-premises data on a Google Cloud virtual machine, and then configure a weekly transfer job.
+
+‘Anything
+   
+######################################### 
+‘Question: 208 _
+
+You are designing a system that requires an ACID-compliant database. You must ensure that the system requires minimal human intervention in case of a failure.
+
+What should you do?
+
+A. Configure a Cloud SQL for MySQL instance with point-in-time recovery enabled.
+B. Configure a Cloud SQL for PostgreSQL instance with high availability enabled. *** Correct 
+C. Configure a Bigtable instance with more than one cluster.
+
+D. Configure a BigQuery table with a multi-region configuration.
+
+‘Anything
+   
+######################################### 
+Question: 209 _
+
+You are implementing workflow pipeline scheduling using open source-based tools and Google Kubernetes Engine (GKE). You want to use a Google managed service to
+simplify and automate the task. You also want to accommodate Shared VPC networking considerations. What should you do?
+
+A. Use Dataflow for your workflow pipelines. Use Cloud Run triggers for scheduling.
+B. Use Dataflow for your workflow pipelines. Use shell scripts to schedule workflows.
+C. Use Cloud Composer in a Shared VPC configuration. Place the Cloud Composer resources in the host project.
+
+D. Use Cloud Composer in a Shared VPC configuration. Place the Cloud Composer resources in the service project. *** Correct
+
+
+
+######################################### 
+Question: 210 _
+
+You are using BigQuery and Data Studio to design a customer-facing dashboard that displays large quantities of aggregated data. You expect a high volume of concurrent
+users. You need to optimize the dashboard to provide quick visualizations with minimal latency. What should you do?
+
+A. Use BigQuery BI Engine with materialized views. *** Correct
+B. Use BigQuery BI Engine with logical views.
+C. Use BigQuery BI Engine with streaming data.
+
+D. Use BigQuery BI Engine with authorized views.
+
+
+######################################### 
+211
+
+Government regulations in the banking industry mandate the protection of clients’ personally identifiable information (Pll). Your company requires Pll to be access
+controlled, encrypted, and compliant with major data protection standards. In addition to using Cloud Data Loss Prevention (Cloud DLP), you want to follow
+Google-recommended practices and use service accounts to control access to PII. What should you do?
+
+A. Assign the required Identity and Access Management (IAM) roles to every employee, and create a single service account to access project resources.
+B. Use one service account to access a Cloud SQL database, and use separate service accounts for each human user.
+C. Use Cloud Storage to comply with major data protection standards. Use one service account shared by all users.
+
+D. Use Cloud Storage to comply with major data protection standards. Use multiple service accounts attached to IAM groups to grant the appropriate access to each
+group. *** Correct
+
+
+   
+######################################### 
+212
+
+You need to migrate a Redis database from an on-premises data center to a Memorystore for Redis instance. You want to follow Google-recommended practices and
+perform the migration for minimal cost, time and effort. What should you do?
+
+A. Make an RDB backup of the Redis database, use the gsutil utility to copy the RDB file into a Cloud Storage bucket, and then import the RDB file into the
+Memorystore for Redis instance. *** Correct
+
+B. Make a secondary instance of the Redis database on a Compute Engine instance and then perform a live cutover.
+C. Create a Dataflow job to read the Redis database from the on-premises data center and write the data to a Memorystore for Redis instance.
+
+D. Write a shell script to migrate the Redis data and create a new Memorystore for Redis instance.
+
+‘Anything
+   
+######################################### 
+‘Question: 213 _
+
+Your platform on your on-premises environment generates 100 GB of data daily, composed of millions of structured JSON text files. Your on-premises environment cannot
+be accessed from the public internet. You want to use Google Cloud products to query and explore the platform data. What should you do?
+
+A. Use Cloud Scheduler to copy data daily from your on-premises environment to Cloud Storage. Use the BigQuery Data Transfer Service to import data into BigQuery.
+B. Use a Transfer Appliance to copy data from your on-premises environment to Cloud Storage. Use the BigQuery Data Transfer Service to import data into BigQuery.
+
+C. Use Transfer Service for on-premises data to copy data from your on-premises environment to Cloud Storage. Use the BigQuery Data Transfer Service to import
+data into BigQuery. **Correct
+
+D. Use the BigQuery Data Transfer Service dataset copy to transfer all data into BigQuery.
+
+######################################### 
+Question: 214 —_
+
+A TensorFlow machine learning model on Compute Engine virtual machines (n2-standard-32) takes two days to complete training. The model has custom TensorFlow
+operations that must run partially on a CPU. You want to reduce the training time in a cost-effective manner. What should you do?
+
+A. Change the VM type to n2-highmem-32.
+B. Change the VM type to e2-standard-32.
+C. Train the model using a VM with a GPU hardware accelerator. *** Correct
+
+D. Train the model using a VM with a TPU hardware accelerator.
+   
+######################################### 
+215
+You want to create a machine learning model using BigQuery ML and create an endpoint for hosting the model using Vertex Al. This will enable the processing of
+continuous streaming data in near-real time from multiple vendors. The data may contain invalid values. What should you do?
+
+A. Create a new BigQuery dataset and use streaming inserts to land the data from multiple vendors. Configure your BigQuery ML model to use the "ingestion" dataset
+as the framing data.
+
+B. Use BigQuery streaming inserts to land the data from multiple vendors where your BigQuery dataset ML model is deployed.
+C. Create a Pub/Sub topic and send all vendor data to it. Connect a Cloud Function to the topic to process the data and store it in BigQuery.
+
+D. Create a Pub/Sub topic and send all vendor data to it. Use Dataflow to process and sanitize the Pub/Sub data and stream it to BigQuery. *** Correct
+   

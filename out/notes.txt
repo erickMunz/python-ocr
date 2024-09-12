@@ -1,0 +1,4 @@
+Review BigQuery BI engine , materialized views
+
+
+Study VPC Network Peering 

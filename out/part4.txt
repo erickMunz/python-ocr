@@ -1,0 +1,1413 @@
+######################################### 
+‘Question: 198 _—
+
+A. Remove Cloud Storage IAM permissions to the External Team on the acme-raw-data project.
+B. Create Virtual Private Cloud (VPC) firewall rules on the acme-raw-data project that deny all ingress traffic from the External Team CIDR range.
+
+C. Create a VPC Service Controls perimeter containing both projects and BigQuery as a restricted API. Add the External Team users to the perimeter's Access Level.
+
+. . a jects;and,Cloud,Storage.as.astestricted. API..Add the Development Team users to the perimeter's
+   
+######################################### 
+Anything2Cloud
+
+You need to give new website users a globally unique identifier (GUID) using a service that takes in data points and returns a GUID. This data is sourced from both internal
+
+and external systems via HTTP calls that you will make via microservices within your pipeline. There will be tens of thousands of messages per second and that can be
+multi-threaded. and you worry about the backpressure on the system. How should you design your pipeline to minimize that backpressure?
+
+A. Call out to the service via HTTP.
+B. Create the pipeline statically in the class definition.
+
+C. Create a new object in the startBundle method of DoFn.
+   
+######################################### 
+Anything2Cloud
+
+You are working on a linear regression model on BigQuery ML to predict a customer's likelihood of purchasing your company's products. Your model uses a city name
+
+variable as a key predictive component. In order to train and serve the model, your data must be organized in columns. You want to prepare your data using the least
+amount of coding while maintaining the predictable variables. What should you do?
+
+A. Create a new view with BigQuery that does not include a column with city information.
+
+C. Use TensorFlow to create a categorical variable with a vocabulary list. Create the vocabulary file and upload that as part of your model to BigQuery ML.
+
+D. Use Cloud Data Fusion to assign each city to a region that is labeled as 1, 2, 3, 4, or 5, and then use that number to represent the city in the model.
+   
+######################################### 
+‘Question: 168 ——_
+
+Your team is working on a binary classification problem. You have trained a support vector machine (SVM) classifier with default parameters, and received an area under
+the Curve (AUC) of 0.87 on the validation set. You want to increase the AUC of the model. What should you do?
+
+B. Train a classifier with deep neural networks, because neural networks would always beat SVMs
+C. Deploy the model and measure the real-world AUC; it's always higher because of generalization
+
+D. Scale predictions you get out of the model (tune a scaling factor as a hyperparameter) in order to get the highest AUC
+   
+######################################### 
+Anything2Cloud
+
+You work for a financial institution that lets customers register online. As new customers register, their user data is sent to Pub/Sub before being ingested into
+
+BigQuery. For security reasons, you decide to redact your customers’ Government issued Identification Number while allowing customer service representatives to view
+the original values when necessary. What should you do?
+
+A. Use BigQuery's built-in AEAD encryption to encrypt the SSN column. Save the keys to a new table that is only viewable by permissioned users.
+B. Use BigQuery column-level security. Set the table permissions so that only members of the Customer Service user group can see the SSN column.
+
+C. Before loading the data into BigQuery, use Cloud Data Loss Prevention (DLP) to replace input values with a cryptographic hash.
+
+en.
+   
+######################################### 
+‘Question: 164 _—
+
+You operate an IoT pipeline built around Apache Kafka that normally receives around 5000 messages per second. You want to use Google Cloud Platform to create an
+alert as soon as the moving average over 1 hour drops below 4000 messages per second. What should you do?
+
+AuConsumelthelstreamofidatalin DataflowlisinglkatkallONsetalsliding timelwindow ofl 'hourevery 5 minutes. Compute the average when the window closes, and
+it : “y
+
+B. Consume the stream of data in Dataflow using Kafka IO. Set a fixed time window of 1 hour. Compute the average when the window closes, and send an alert if the
+average is less than 4000 messages.
+
+C. Use Kafka Connect to link your Kafka message queue to Pub/Sub. Use a Dataflow template to write your messages from Pub/Sub to Bigtable. Use Cloud Scheduler
+to run a script every hour that counts the number of rows created in Bigtable in the last hour. If that number falls below 4000, send an alert.
+
+D. Use Kafka Connect to link your Kafka message queue to Pub/Sub. Use a Dataflow template to write your messages from Pub/Sub to BigQuery. Use Cloud
+Scheduler to run a script every five minutes that counts the number of rows created in BigQuery in the last hour. If that number falls below 4000, send an alert.
+   
+######################################### 
+‘Question: 173 ——_
+
+You want to archive data in Cloud Storage. Because some data is very sensitive, you want to use the ‘Trust No One’ (TNO) approach to encrypt your data to prevent the
+cloud provider staff from decrypting your data. What should you do?
+
+henticated
+B. Use gcloud kms keys create to create a symmetric key. Then use gcloud kms encrypt to encrypt each archival file with the key. Use gsutil cp to upload each
+
+encrypted file to the Cloud Storage bucket. Manually destroy the key previously used for encryption, and rotate the key once.
+
+C. Specify customer-supplied encryption key (CSEK) in the .boto configuration file. Use gsutil cp to upload each archival file to the Cloud Storage bucket. Save the
+CSEK in Cloud Memorystore as permanent storage of the secret.
+
+D. Specify customer-supplied encryption key (CSEK) in the .boto configuration file. Use gsutil cp to upload each archival file to the Cloud Storage bucket. Save the
+CSEK in a different project that only the security team can access.
+   
+######################################### 
+‘Question: 151 ——_
+
+You need to create a new transaction table in Cloud Spanner that stores product sales data. You are deciding what to
+use as a primary key. From a performance perspective, which strategy should you choose?
+
+A. The current epoch time
+
+B. A concatenation of the product name and the current epoch time
+
+C. Arandom universally unique identifier number (version 4 UUID)
+
+D. The original order identification number from the sales system, which is a monotonically increasing integer
+   
+######################################### 
+You need to choose a database for a new project that has the following requirements:
+
+Fully managed
+
+Able to automatically scale up
+
+Transactionally consistent
+
+Able to scale up to 6 TB
+
+Able to be queried using SQL
+Which database do you choose?
+
+B. Cloud Bigtable
+C. Cloud Spanner
+
+D. Cloud Datastore
+
+Anything2Cloud
+   
+######################################### 
+Anything2Cloud
+
+You receive data files in CSV format monthly from a third party. You need to cleanse this data, but every third month the schema of the files changes. Your requirements
+for implementing these transformations include:
+
+Executing the transformations on a schedule
+
+Enabling non-developer analysts to modify transformations
+
+Providing a graphical tool for designing transformations
+What should you do?
+
+A. Use Dataprep by Trifacta to build and maintain the transformation recipes, and execute them on a scheduled basis
+
+B. Load each month's CSV data into BigQuery, and write a SQL query to transform the data to a standard schema. Merge the transformed tables together with a SQL
+query
+C. Help the analysts write a Dataflow pipeline in Python to perform the transformation. The Python code should be stored in a revision control system and modified as
+
+the incoming data's schema changes
+
+D. Use Apache Spark on Dataproc to infer the schema of the CSV file before creating a Dataframe. Then implement the transformations in Spark SQL before writing
+the data out to Cloud Storage and loading into BigQuery
+   
+######################################### 
+Anything2Cloud
+
+You want to rebuild your batch pipeline for structured data on Google Cloud. You are using PySpark to conduct data transformations at scale, but your pipelines are taking
+over twelve hours to run. To expedite development and pipeline run time, you want to use a serverless tool and SOL syntax. You have already moved your raw data into
+Cloud Storage. How should you build the pipeline on Google Cloud while meeting speed and processing requirements?
+
+A. Convert your PySpark commands into SparkSQL queries to transform the data, and then run your pipeline on Dataproc to write the data into BigQuery.
+
+B. Ingest your data into Cloud SQL, convert your PySpark commands into SparkSQL queries to transform the data, and then use federated quenes from BigQuery for
+machine learning.
+
+C. Ingest your data into BigQuery from Cloud Storage, convert your PySpark commands into BigQuery SQL queries to transform the data, and then write the
+transformations to a new table.
+
+D. Use Apache Beam Python SDK to build the transformation pipelines, and write the data into BigQuery.
+   
+######################################### 
+Anything2Cloud
+You are updating the code for a subscriber to a Pub/Sub feed. You are concerned that upon deployment the subscriber may erroneously acknowledge messages, leading
+to message loss. Your subscriber is not set up to retain acknowledged messages. What should you do to ensure that you can recover from errors after deployment?
+
+A. Set up the Pub/Sub emulator on your local machine. Validate the behavior of your new subscriber logic before deploying it to production.
+
+shot was
+
+C. Use Cloud Build for your deployment. If an error occurs after deployment, use a Seek operation to locate a timestamp logged by Cloud Build at the start of the
+deployment.
+
+D. Enable dead-lettering on the Pub/Sub topic to capture messages that aren't successfully acknowledged. If an error occurs after deployment, re-deliver any
+messages captured by the dead-letter queue.
+   
+######################################### 
+“Question: 174 _—
+
+You have data pipelines running on BigQuery, Dataflow, and Dataproc. You need to perform health checks and monitor their behavior, and then notify the team managing
+
+the pipelines if they fail. You also need to be able to work across multiple projects. Your preference is to use managed products or features of the platform. What should
+you do?
+
+B. Run a Virtual Machine in Compute Engine with Airflow, and export the information to Cloud Monitoring
+C. Export the logs to BigQuery, and set up App Engine to read that information and send emails if you find a failure in the logs
+
+D. Develop an App Engine application to consume logs using GCP API calls, and send emails if you find a failure in the logs
+   
+######################################### 
+Anything2Cloud
+
+Data Analysts in your company have the Cloud [AM Owner role assigned to them in their projects to allow them to work with multiple GCP products in their projects. Your
+
+organization requires that all BigQuery data access logs be retained for 6 months. You need to ensure that only audit personnel in your company can access the data
+access logs for all projects. What should you do?
+
+A. Enable data access logs in each Data Analyst's project. Restrict access to Stackdriver Logging via Cloud IAM roles.
+
+B. Export the data access logs via a project-level export sink to a Cloud Storage bucket in the Data Analysts’ projects. Restrict access to the Cloud Storage bucket.
+
+C. Export the data access logs via a project-level export sink to a Cloud Storage bucket in a newly created projects for audit logs. Restrict access to the project with
+the exported logs.
+
+D. Export the data access logs via an aggregated export sink to a Cloud Storage bucket in a newly created project for audit logs. Restrict access to the project that
+contains the exported logs.
+   
+######################################### 
+Anything2Cloud
+
+You are migrating a table to BigQuery and are deciding on the data model. Your table stores information related to purchases made across several store locations and
+includes information like the time of the transaction, items purchased, the store ID, and the city and state in which the store is located. You frequently query this table to
+
+see how many of each item were sold over the past 30 days and to look at purchasing trends by state, city, and individual store. How would you model this table for the
+best query performance?
+
+A. Partition by transaction time; cluster by state first, then city, then store ID.
+B. Partition by transaction time; cluster by store ID first, then city, then state.
+C. Top-level cluster by state first, then city, then store ID.
+
+D. Top-level cluster by store ID first, then city, then state.
+   
+######################################### 
+‘Question: 163 _
+
+You work for a global shipping company. You want to train a model on 40 TB of data to predict which ships in each geographic region are likely to cause delivery delays on
+any given day. The model will be based on multiple attributes collected from multiple sources. Telemetry data, including location in GeoJSON format, will be pulled from
+each ship and loaded every hour. You want to have a dashboard that shows how many and which ships are likely to cause delays within a region. You want to use a
+storage solution that has native functionality for prediction and geospatial processing. Which storage solution should you use?
+
+A. BigQuery
+B. Cloud Bigtable
+C. Cloud Datastore
+
+D. Cloud SQL for PostgreSQL
+   
+######################################### 
+Anything2Cloud
+
+Your company currently runs a large on-premises cluster using Spark, Hive, and HDFS in a colocation facility. The cluster is designed to accommodate peak usage on the
+system; however, many jobs are batch in nature, and usage of the cluster fluctuates quite dramatically. Your company is eager to move to the cloud to reduce the
+overhead associated with on-premises infrastructure and maintenance and to benefit from the cost savings. They are also hoping to modernize their existing
+infrastructure to use more serverless offerings in order to take advantage of the cloud. Because of the timing of their contract renewal with the colocation facility, they
+
+have only 2 months for their initial migration. How would you recommend they approach their upcoming migration strategy so they can maximize their cost savings in the
+cloud while still executing the migration in time?
+
+A. Migrate the workloads to Dataproc plus HDFS; modernize later.
+C. Migrate the Spark workload to Dataproc plus HDFS, and modernize the Hive workload for BigQuery.
+
+D. Modernize the Spark workload for Dataflow and the Hive workload for BigQuery.
+   
+######################################### 
+‘Question: 165 _—
+
+You plan to deploy Cloud SQL using MySQL. You need to ensure high availability in the event of a zone failure. What should you do?
+
+A. Create a Cloud SQL instance in one zone, and create a failover replica in another zone within the same region.
+B. Create a Cloud SQL instance in one zone, and create a read replica in another zone within the same region.
+C. Create a Cloud SQL instance in one zone, and configure an external read replica in a zone in a different region.
+
+D. Create a Cloud SQL instance in a region, and configure automatic backup to a Cloud Storage bucket in the same region.
+   
+######################################### 
+‘Question: 169 _—
+
+You need to deploy additional dependencies to all nodes of a Cloud Dataproc cluster at startup using an existing initialization action. Company security policies require
+that Cloud Dataproc nodes do not have access to the Internet so public initialization actions cannot fetch resources. What should you do?
+
+A. Deploy the Cloud SQL Proxy on the Cloud Dataproc master
+B. Use an SSH tunnel to give the Cloud Dataproc cluster access to the Internet
+C. Copy all dependencies to a Cloud Storage bucket within your VPC security perimeter
+
+D. Use Resource Manager to add the service account used by the Cloud Dataproc cluster to the Network User role
+   
+######################################### 
+‘Question: 182 _—
+
+You work for a large real estate firm and are preparing 6 TB of home sales data to be used for machine learning. You will use SQL to transform the data and use
+
+BigQuery ML to create a machine learning model. You plan to use the model for predictions against a raw dataset that has not been transformed. How should you set up
+your workflow in order to prevent skew at prediction time?
+
+specifying : ‘
+B. When creating your model, use BigQuery's TRANSFORM clause to define preprocessing steps. Before requesting predictions, use a saved query to transform your
+raw input data, and then use ML.EVALUATE.
+
+C. Use a BigQuery view to define your preprocessing logic. When creating your model, use the view as your model training data. At prediction time, use BigQuery's
+ML.EVALUATE clause without specifying any transformations on the raw input data.
+
+D. Preprocess all data using Dataflow. At prediction time, use BigQuery's ML.EVALUATE clause without specifying any further transformations on the input data.
+   
+######################################### 
+Anything2Cloud
+
+You have uploaded 5 years of log data to Cloud Storage. A user reported that some data points in the log data are outside of their expected ranges, which indicates
+errors. You need to address this issue and be able to run the process again in the future while keeping the original data for compliance reasons. What should you do?
+
+A. Import the data from Cloud Storage into BigQuery. Create a new BigQuery table, and skip the rows with errors.
+B. Create a Compute Engine instance and create a new copy of the data in Cloud Storage. Skip the rows with errors.
+
+C. Create a Dataflow workflow that reads the data from Cloud Storage, checks for values outside the expected range, sets the value to an appropriate default, and
+writes the updated records to a new dataset in Cloud Storage.
+
+D. Create a Dataflow workflow that reads the data from Cloud Storage, checks for values outside the expected range, sets the value to an appropriate default, and
+writes the updated records to the same dataset in Cloud Storage.
+   
+######################################### 
+Anything2Cloud
+
+You want to migrate an on-premises Hadoop system to Cloud Dataproc. Hive is the primary tool in use, and the data format is Optimized Row Columnar (ORC).
+All ORC files have been successfully copied to a Cloud Storage bucket. You need to replicate some data to the cluster's local Hadoop Distributed File System
+(HDFS) to maximize performance. What are two ways to start using Hive in Cloud Dataproc? (Choose two.)
+
+A. Run the gsutil utility to transfer all ORC files from the Cloud Storage bucket to HDFS. Mount the Hive tables locally.
+B. Run the gsutil utility to transfer all ORC files from the Cloud Storage bucket to any node of the Dataproc cluster. Mount the Hive tables locally.
+
+C. Run the gsutil utility to transfer all ORC files from the Cloud Storage bucket to the master node of the Dataproc cluster. Then run the Hadoop utility to copy them do
+HDFS. Mount the Hive tables from HDFS.
+
+D. Leverage Cloud Storage connector for Hadoop to mount the ORC files as external Hive tables. Replicate external Hive tables to the native ones.
+
+E. Load the ORC files into BigQuery. Leverage BigQuery connector for Hadoop to mount the BigQuery tables as external Hive tables. Replicate external Hive tables to
+the native ones.
+   
+######################################### 
+‘Question: 193 _—
+
+You are migrating your data warehouse to Google Cloud and decommissioning your on-premises data center. Because this is a priority for your company, you know that
+bandwidth will be made available for the initial data load to the cloud. The files being transferred are not large in number, but each file is 90 GB.
+
+Additionally, you want your transactional systems to continually update the warehouse on Google Cloud in real time. What tools should you use to migrate the data and
+ensure that it continues to write to your warehouse?
+
+A. Storage Transfer Service for the migration; Pub/Sub and Cloud Data Fusion for the real-time updates
+B. BigQuery Data Transfer Service for the migration; Pub/Sub and Dataproc for the real-time updates
+ergsutilt . .
+
+D. gsutil for both the migration and the real-time updates
+   
+######################################### 
+‘Question: 198 ——
+
+The Development and External teams have the project viewer Identity and Access Management (IAM) role in a folder named Visualization. You want the
+
+Development Team to be able to read data from both Cloud Storage and BigQuery, but the External Team should only be able to read data from BigQuery. What should you
+do?
+
+on-premises
+
+Development
+
+Tear
+
+Co : @==
+   
+######################################### 
+‘Question: 189 ——_
+
+You are testing a Dataflow pipeline to ingest and transform text files. The files are compressed gzip, errors are written to a dead-letter queue, and you are using
+Sidelnputs to join data. You noticed that the pipeline is taking longer to complete than expected; what should you do to expedite the Dataflow job?
+
+A. Switch to compressed Avro files.
+B. Reduce the batch size.
+C. Retry records that throw an error.
+
+D. Use CoGroupByKey instead of the Sidelnput.
+   
+######################################### 
+Anything2Cloud
+
+You work for a shipping company that has distribution centers where packages move on delivery lines to route them properly. The company wants to add cameras to the
+
+delivery lines to detect and track any visual damage to the packages in transit. You need to create a way to automate the detection of damaged packages and flag them
+for human review in real time while the packages are in transit. Which solution should you choose?
+
+A. Use BigQuery machine learning to be able to train the model at scale, so you can analyze the packages in batches.
+
+C. Use the Cloud Vision API to detect for damage, and raise an alert through Cloud Functions. Integrate the package tracking applications with this function.
+
+D. Use TensorFlow to create a model that is trained on your corpus of images. Create a Python notebook in Cloud Datalab that uses this model so you can analyze for
+damaged packages.
+   
+######################################### 
+Anything2Cloud
+
+You work for a large financial institution that is planning to use Dialogflow to create a chatbot for the company's mobile app. You have reviewed old chat logs and tagged
+each conversation for intent based on each customer's stated intention for contacting customer service. About 70% of customer requests are simple requests that are
+solved within 10 intents. The remaining 30% of inquiries require much longer, more complicated requests. Which intents should you automate first?
+
+A. Automate the 10 intents that cover 70% of the requests so that live agents can handle more complicated requests.
+B. Automate the more complicated requests first because those require more of the agents' time.
+C. Automate a blend of the shortest and longest intents to be representative of all intents.
+
+D. Automate intents in places where common words such as ‘payment’ appear only once so the software isn't confused.
+   
+######################################### 
+Anything2Cloud
+
+You are migrating an application that tracks library books and information about each book, such as author or year published, from an on-premises data warehouse to
+BigQuery. In your current relational database, the author information is kept in a separate table and joined to the book information on a common key. Based on Google's
+recommended practice for schema design, how would you structure the data to ensure optimal speed of queries about the author of each book that has been borrowed?
+
+A. Keep the schema the same, maintain the different tables for the book and each of the attributes, and query as you are doing today.
+B. Create a table that is wide and includes a column for each attribute, including the author's first name, last name, date of birth, etc.
+C. Create a table that includes information about the books and authors, but nest the author fields inside the author column.
+
+D. Keep the schema the same, create a view that joins all of the tables, and always query the view.
+   
+######################################### 
+Anything2Cloud
+
+You work for a large bank that operates in locations throughout North America. You are setting up a data storage system that will handle bank account transactions. You
+require ACID compliance and the ability to access data with SQL. Which solution is appropriate?
+
+A. Store transaction data in Cloud Spanner. Enable stale reads to reduce latency.
+B. Store transaction in Cloud Spanner. Use locking read-write transactions.
+C. Store transaction data in BigQuery. Disabled the query cache to ensure consistency.
+
+D. Store transaction data in Cloud SQL. Use a federated query BigQuery for analysis.
+   
+######################################### 
+‘Question: 167 _—
+
+You are planning to migrate your current on-premises Apache Hadoop deployment to the cloud. You need to ensure that the deployment is as fault-tolerant and cost-
+effective as possible for long-running batch jobs. You want to use a managed service. What should you do?
+
+A. Deploy a Dataproc cluster. Use a standard persistent disk and'50% preemptible workers. Store data in’ Cloud Storage,andichange references in scripts from hdfs://
+togs://
+
+B. Deploy a Dataproc cluster. Use an SSD persistent disk and 50% preemptible workers. Store data in Cloud Storage, and change references in scripts from hdfs:// to
+gs://
+
+C. Install Hadoop and Spark on a 10-node Compute Engine instance group with standard instances. Install the Cloud Storage connector, and store the data in Cloud
+Storage. Change references in scripts from hdfs:// to gs://
+
+D. Install Hadoop and Spark on a 10-node Compute Engine instance group with preemptible instances. Store data in HDFS. Change references in scripts from hdfs://
+to gs://
+   
+######################################### 
+‘Question: 154 _—
+
+You are operating a streaming Cloud Dataflow pipeline. Your engineers have a new version of the pipeline with a different windowing algorithm and triggering strategy.
+You want to update the running pipeline with the new version. You want to ensure that no data is lost during the update. What should you do?
+
+A. Update the Cloud Dataflow pipeline inflight by passing the -update option with the --jobName set to the existing job name
+B. Update the Cloud Dataflow pipeline inflight by passing the --update option with the -jobName set to a new unique job name
+C. Stop the Cloud Dataflow pipeline with the Cancel option. Create a new Cloud Dataflow job with the updated code
+
+D. Stop the Cloud Dataflow pipeline with the Drain option. Create a new Cloud Dataflow job with the updated code
+   
+######################################### 
+‘Question: 172 _—
+
+You need to choose a database to store time series CPU and memory usage for millions of computers. You need to store
+this data in one-second interval samples. Analysts will be performing real-time, ad hoc analytics against the database. You
+want to avoid being charged for every query executed and ensure that the schema design will allow for future growth of the
+dataset. Which database and data model should you choose?
+
+A. Create a table in BigQuery, and append the new samples for CPU and memory to the table
+B. Create a wide table in BigQuery, create a column for the sample value at each second, and update the row with the interval for each second
+
+CaCreatelainarrow tablevinBigtableiwithtarowkey:thaticombinesithe ComputerEngine computer, identifier with the sample time at each second
+
+D. Create a wide table in Bigtable with a row key that combines the|computer identifier with the sample time at each minute, and combine the values for each second
+as column data.
+   
+######################################### 
+Anything2Cloud
+
+You want to build a managed Hadoop system as your data lake. The data transformation process is composed of a series of Hadoop jobs executed in sequence.
+
+To accomplish the design of separating storage from compute, you decided to use the Cloud Storage connector to store all input data, output data, and intermediary data.
+However, you noticed that one Hadoop job runs very slowly with Cloud Dataproc, when compared with the on-premises bare-metal Hadoop environment (8-core nodes
+with 100-GB RAM). Analysis shows that this particular Hadoop job is disk I/0 intensive. You want to resolve the issue. What should you do?
+
+A. Allocate sufficient memory to the Hadoop cluster, so that the intermediary data of that particular Hadoop job can be held in memory
+
+C. Allocate more CPU cores of the virtual machine instances of the Hadoop cluster so that the networking bandwidth for each instance can scale up
+
+D. Allocate additional network interface card (NIC), and configure link aggregation in the operating system to use the combined throughput when working with Cloud
+Storage
+   
+######################################### 
+‘Question: 199 ——_
+
+Your startup has a web application that currently serves customers out of a single region in Asia. You are targeting funding that will allow your startup to serve customers
+
+globally. Your current goal is to optimize for cost, and your post-funding goal is to optimize for global presence and performance. You must use a native
+JDBC driver. What should you do?
+
+B. Use a Cloud SQL for PostgreSQL highly available instance first, and Bigtable with US, Europe, and Asia replication after securing funding.
+
+C. Use a Cloud SQL for PostgreSQL zonal instance first, and Bigtable with US, Europe, and Asia after securing funding.
+
+D. Use a Cloud SQL for PostgreSQL zonal instance first, and Cloud SQL for PostgreSQL with highly available configuration after securing funding.
+   
+######################################### 
+Anything2Cloud
+
+You are building a report-only data warehouse where the data is streamed into BigQuery via the streaming API. Following Google's best practices, you have both a staging
+and a production table for the data. How should you design your data loading to ensure that there is only one master dataset without affecting performance on either the
+ingestion or reporting pieces?
+
+A. Have a staging table that is an append-only model, and then update the production table every three hours with the changes written to staging.
+
+B. Have a staging table that is an append-only model, and then update the production table every ninety minutes with the changes written to staging.
+
+D. Have a staging table that moves the staged data over to the production table and deletes the contents of the staging table every thirty minutes.
+   
+######################################### 
+Anything2Cloud
+
+You are using Bigtable to persist and serve stock market data for each of the major indices. To serve the trading application, you need to access only the most recent
+stock prices that are streaming in. How should you design your row key and tables to ensure that you can access the data with the simplest query?
+
+A. Create one unique table for all of the indices, and then use the index and timestamp as the row key design.
+C. For each index, have a separate table and use a timestamp as the row key design.
+
+D. For each index, have a separate table and use a reverse timestamp as the row key design.
+   
+######################################### 
+‘Question: 200 _—
+
+You need to migrate 1 PB of data from an on-premises data center to Google Cloud. Data transfer time during the migration should take only a few hours. You want to
+follow Google-recommended practices to facilitate the large data transfer over a secure connection. What should you do?
+
+B. Use a Transfer Appliance and have engineers manually encrypt, decrypt, and verify the data.
+C. Establish a Cloud VPN connection, start gcloud compute scp jobs in parallel, and run checksums to verify the data.
+
+D. Reduce the data into 3 TB batches, transfer the data using gsutil, and run checksums to verify the data.
+   
+######################################### 
+‘Question: 196 _
+
+You issue a new batch job to Dataflow. The job starts successfully, processes a few elements, and then suddenly fails and shuts down. You navigate to the
+Dataflow monitoring interface where you find errors related to a particular DoFn in your pipeline. What is the most likely cause of the errors?
+
+A. Job validation
+B. Exceptions in worker code
+C. Graph or pipeline construction
+
+D. Insufficient permissions
+   
+######################################### 
+Anything2Cloud
+
+You are migrating your data warehouse to BigQuery. You have migrated all of your data into tables in a dataset. Multiple users from your organization will be using the
+data. They should only see certain tables based on their team membership. How should you set user permissions?
+
+B. Create SQL views for each team in the same dataset in which the data resides, and assign the users/groups data viewer access to the SQL views
+C. Create authorized views for each team in the same dataset in which the data resides, and assign the users/groups data viewer access to the authorized views
+
+D. Create authorized views for each team in datasets created for each team. Assign the authorized views data viewer access to the dataset in which the data resides.
+Assign the users/groups data viewer access to the datasets in which the authorized views reside
+   
+######################################### 
+‘Question: 183 _—
+
+You are analyzing the price of a company's stock. Every 5 seconds, you need to compute a moving average of the past 30 seconds’ worth of data. You are reading data
+from Pub/Sub and using DataFlow to conduct the analysis. How should you set up your windowed pipeline?
+
+A. Use a fixed window with a duration of 5 seconds. Emit results by setting the following trigger: AfterProcessingTime.pastFirstElementinPane().plusDelayOf
+(Duration.standardSeconds(30))
+
+B. Use a fixed window with a duration of 30 seconds. Emit results by setting the following trigger: AfterWatermark.pastEndOfWindow().plusDelayOf
+(Duration.standardSeconds(5))
+
+C. Use a sliding window with a duration of 5 seconds. Emit results by setting the following trigger: AfterProcessing Time. pastFirstElementinPane().plusDelayOf
+(Duration.standardSeconds(30))
+
+   
+######################################### 
+‘Question: 158 _
+
+You are implementing several batch jobs that must be executed on a schedule. These jobs have many interdependent steps that must be executed in a specific order.
+Portions of the jobs involve executing shell scripts, running Hadoop jobs, and running queries in BigQuery. The jobs are expected to run for many minutes up to several
+hours. If the steps fail, they must be retried a fixed number of times. Which service should you use to manage the execution of these jobs?
+
+A. Cloud Scheduler
+B. Cloud Dataflow
+
+C. Cloud Functions
+
+‘D. Cloud Composer
+   
+######################################### 
+Anything2Cloud
+
+Your company is implementing a data warehouse using BigQuery, and you have been tasked with designing the data model. You move your on-premises sales data
+warehouse with a star data schema to BigQuery but notice performance issues when querying the data of the past 30 days. Based on Google's recommended practices,
+what should you do to speed up the query without increasing storage costs?
+
+A. Denormalize the data.
+B. Shard the data by customer ID.
+C. Materialize the dimensional data in views.
+
+D. Partition the data by transaction date.
+   
+######################################### 
+‘Question: 190 _—
+
+You are building a real-time prediction engine that streams files, which may contain Pll (personal identifiable information) data, into Cloud Storage and eventually into
+BigQuery. You want to ensure that the sensitive data is masked but still maintains referential integrity, because names and emails are often used as join keys.
+How should you use the Cloud Data Loss Prevention API (DLP API) to ensure that the Pll data is not accessible by unauthorized individuals?
+
+A. Create a pseudonym by replacing the Pll data with cryptogenic tokens, and store the non-tokenized data in a locked-down button.
+B. Redact all Pll data, and store a version of the unredacted data in a locked-down bucket.
+C. Scan every table in BigQuery, and mask the data it finds that has Pll.
+
+D. Create a pseudonym by replacing Pll data with a cryptographic format-preserving token.
+   
+######################################### 
+‘Question: 162, _—
+
+You work for an advertising company, and you've developed a Spark ML model to predict click-through rates at advertisement blocks. You've been developing everything
+at your on-premises data center, and now your company is migrating to Google Cloud. Your data center will be closing soon, so a rapid lift-and-shift migration is
+
+necessary. However, the data you've been using will be migrated to migrated to BigQuery. You periodically retrain your Spark ML models, so you need to migrate existing
+training pipelines to Google Cloud. What should you do?
+
+A. Use Vertex Al for training existing Spark ML models
+B. Rewrite your models on TensorFlow, and start using Vertex Al
+‘C. Use Dataproc for training existing Spark ML models, but start reading data directly from BigQuery —
+
+D. Spin up a Spark cluster on Compute Engine, and train Spark ML models on the data exported from BigQuery
+   
+######################################### 
+‘Question: 153 _—
+
+Each analytics team in your organization is running BigQuery jobs in their own projects. You want to enable each team to
+monitor slot usage within their projects.
+What should you do?
+
+A. Create a Cloud Monitoring dashboard based on the BigQuery metric query/scanned_bytes
+
+B. Create a Cloud Monitoring dashboard based on the BigQuery metric slots/allocated_for_project
+
+C. Create a log export for each project, capture the BigQuery job execution logs, create a custom metric based on the totalSlotMs, and create a Cloud Monitoring
+dashboard based on the custom metric
+
+D. Create an aggregated log export at the organization level, capture the BigQuery job execution logs, create a custom metric based on the totalSlotMs, and create a
+Cloud Monitoring dashboard based on the custom metric
+   
+######################################### 
+‘Question: 171 ae
+
+You work for a mid-sized enterprise that needs to move its operational system transaction data from an on-premises database to GCP. The database is about 20
+TB in size. Which database should you choose?
+
+A. Cloud SQL
+B. Cloud Bigtable
+C. Cloud Spanner
+
+D. Cloud Datastore
+   
+######################################### 
+Anything2Cloud
+
+Your company is selecting a system to centralize data ingestion and delivery. You are considering
+messaging and data integration systems to address the requirements. The key requirements are:
+The ability to seek to a particular offset in a topic, possibly back to the start of all data ever captured
+
+Support for publish/subscribe semantics on hundreds of topics
+
+Retain per-key ordering -
+
+Which system should you choose?
+
+B. Cloud Storage
+C. Dataflow
+D. Firebase Cloud Messaging
+   
+######################################### 
+‘Question: 155 _—
+
+You need to move 2 PB of historical data from an on-premises storage appliance to Cloud Storage within six months, and your outbound network capacity is constrained
+to 20 Mb/sec. How should you migrate this data to Cloud Storage?
+
+A. Use Transfer Appliance to copy the data to Cloud Storage
+B. Use gsutil cp a€"J to compress the content being uploaded to Cloud Storage
+C. Create a private URL for the historical data, and then use Storage Transfer Service to copy the data to Cloud Storage
+
+D. Use trickle or ionice along with gsutil cp to limit the amount of bandwidth gsutil utilizes to less than 20 Mb/sec so it does not interfere with the production traffic
+   
+######################################### 
+‘Question: 177 _—
+
+A shipping company has live package-tracking data that is sent to an Apache Kafka stream in real time. This is then loaded into BigQuery. Analysts in your company want
+to query the tracking data in BigQuery to analyze geospatial trends in the lifecycle of a package. The table was originally created with ingest-date partitioning. Over time,
+the query processing time has increased. You need to implement a change that would improve query performance in BigQuery. What should you do?
+
+A. Implement clustering in BigQuery on the ingest date column.
+C. Tier older data onto Cloud Storage files and create a BigQuery table using Cloud Storage as an external data source.
+
+D. Re-create the table using data partitioning on the package delivery date.
+   
+######################################### 
+‘Question: 188 _—
+
+You want to rebuild your batch pipeline for structured data on Google Cloud. You are using PySpark to conduct data transformations at scale, but your pipelines are taking
+
+over twelve hours to run. To expedite development and pipeline run time, you want to use a serverless tool and SOL syntax. You have already moved your raw data into
+Cloud Storage. How should you build the pipeline on Google Cloud while meeting speed and processing requirements?
+
+A. Convert your PySpark commands into SparkSQL queries to transform the data, and then run your pipeline on Dataproc to write the data into BigQuery.
+
+B. Ingest your data into Cloud SQL, convert your PySpark commands into SparkSQL queries to transform the data, and then use federated quenes from BigQuery for
+machine learning.
+
+mtransformationsito’@’hew'table.
+
+D. Use Apache Beam Python SDK to build the transformation pipelines, and write the data into BigQuery.
+   
+######################################### 
+‘Question: 155 ——_
+
+You need to move 2 PB of historical data from an on-premises storage appliance to Cloud Storage within six months, and your outbound network capacity is constrained
+to 20 Mb/sec. How should you migrate this data to Cloud Storage?
+
+A. Use Transfer Appliance to copy the data to Cloud Storage
+B. Use gsutil cp a€"J to compress the content being uploaded to Cloud Storage
+
+C. Create a private URL for the historical data, and then use Storage Transfer Service to copy the data to Cloud Storage
+
+D. Use trickle or ionice along with gsutil cp to limit the amount of bandwidth gsutil utilizes to less than 20 Mb/sec so it does not interfere with the production traffic
+   
+######################################### 
+‘Question: 182 ——_
+
+You work for a large real estate firm and are preparing 6 TB of home sales data to be used for machine learning. You will use SQL to transform the data and use
+
+BigQuery ML to create a machine learning model. You plan to use the model for predictions against a raw dataset that has not been transformed. How should you set up
+your workflow in order to prevent skew at prediction time?
+
+A. When creating your model, use BigQuery's TRANSFORM clause to define preprocessing steps. At prediction time, use BigQuery's ML.EVALUATE clause without
+specifying any transformations on the raw input data.
+
+B. When creating your model, use BigQuery's TRANSFORM clause to define preprocessing steps. Before requesting predictions, use a saved query to transform your
+raw input data, and then use ML.EVALUATE.
+
+C. Use a BigQuery view to define your preprocessing logic. When creating your model, use the view as your model training data. At prediction time, use BigQuery's
+ML.EVALUATE clause without specifying any transformations on the raw input data.
+
+D. Preprocess all data using Dataflow. At prediction time, use BigQuery's ML.EVALUATE clause without specifying any further transformations on the input data.
+   
+######################################### 
+Anything2Cloud
+
+You are migrating a table to BigQuery and are deciding on the data model. Your table stores information related to purchases made across several store locations and
+includes information like the time of the transaction, items purchased, the store ID, and the city and state in which the store is located. You frequently query this table to
+
+see how many of each item were sold over the past 30 days and to look at purchasing trends by state, city, and individual store. How would you model this table for the
+best query performance?
+
+A. Partition by transaction time; cluster by state first, then city, then store ID.
+B. Partition by transaction time; cluster by store ID first, then city, then state.
+C. Top-level cluster by state first, then city, then store ID.
+
+D. Top-level cluster by store ID first, then city, then state.
+   
+######################################### 
+‘Question: 168 ——_
+
+Your team is working on a binary classification problem. You have trained a support vector machine (SVM) classifier with default parameters, and received an area under
+the Curve (AUC) of 0.87 on the validation set. You want to increase the AUC of the model. What should you do?
+
+A. Perform hyperparameter tuning
+B. Train a classifier with deep neural networks, because neural networks would always beat SVMs
+C. Deploy the model and measure the real-world AUC; it's always higher because of generalization
+
+D. Scale predictions you get out of the model (tune a scaling factor as a hyperparameter) in order to get the highest AUC
+   
+######################################### 
+Anything2Cloud
+
+You work for a large bank that operates in locations throughout North America. You are setting up a data storage system that will handle bank account transactions. You
+require ACID compliance and the ability to access data with SQL. Which solution is appropriate?
+
+A. Store transaction data in Cloud Spanner. Enable stale reads to reduce latency.
+B. Store transaction in Cloud Spanner. Use locking read-write transactions.
+C. Store transaction data in BigQuery. Disabled the query cache to ensure consistency.
+
+D. Store transaction data in Cloud SQL. Use a federated query BigQuery for analysis.
+   
+######################################### 
+‘Question: 170 _—
+
+You need to choose a database for a new project that has the following requirements:
+Fully managed
+Able to automatically scale up
+Transactionally consistent
+Able to scale up to 6 TB
+Able to be queried using SQL
+Which database do you choose?
+
+A. Cloud SQL
+B. Cloud Bigtable
+C. Cloud Spanner
+
+D. Cloud Datastore
+   
+######################################### 
+‘Question: 174 _—
+
+You have data pipelines running on BigQuery, Dataflow, and Dataproc. You need to perform health checks and monitor their behavior, and then notify the team managing
+the pipelines if they fail. You also need to be able to work across multiple projects. Your preference is to use managed products or features of the platform. What should
+you do?
+
+A. Export the information to Cloud Monitoring, and set up an Alerting policy
+B. Run a Virtual Machine in Compute Engine with Airflow, and export the information to Cloud Monitoring
+C. Export the logs to BigQuery, and set up App Engine to read that information and send emails if you find a failure in the logs
+
+D. Develop an App Engine application to consume logs using GCP API calls, and send emails if you find a failure in the logs
+   
+######################################### 
+‘Question: 164 _—
+
+You operate an loT pipeline built around Apache Kafka that normally receives around 5000 messages per second. You want to use Google Cloud Platform to create an
+alert as soon as the moving average over 1 hour drops below 4000 messages per second. What should you do?
+
+A. Consume the stream of data in Dataflow using Kafka IO. Set a sliding time window of 1 hour every 5 minutes. Compute the average when the window closes, and
+send an alert if the average is less than 4000 messages.
+
+B. Consume the stream of data in Dataflow using Kafka IO. Set a fixed time window of 1 hour. Compute the average when the window closes, and send an alert if the
+average is less than 4000 messages.
+
+C. Use Kafka Connect to link your Kafka message queue to Pub/Sub. Use a Dataflow template to write your messages from Pub/Sub to Bigtable. Use Cloud Scheduler
+to run a script every hour that counts the number of rows created in Bigtable in the last hour. If that number falls below 4000, send an alert.
+
+D. Use Kafka Connect to link your Kafka message queue to Pub/Sub. Use a Dataflow template to write your messages from Pub/Sub to BigQuery. Use Cloud
+Scheduler to run a script every five minutes that counts the number of rows created in BigQuery in the last hour. If that number falls below 4000, send an alert.
+   
+######################################### 
+‘Question: 198 ——_
+
+A. Remove Cloud Storage IAM permissions to the External Team on the acme-raw-data project.
+B. Create Virtual Private Cloud (VPC) firewall rules on the acme-raw-data project that deny all ingress traffic from the External Team CIDR range.
+C. Create a VPC Service Controls perimeter containing both projects and BigQuery as a restricted API. Add the External Team users to the perimeter's Access Level.
+
+D. Create a VPC Service Controls perimeter containing both projects and Cloud Storage as a restricted API. Add the Development Team users to the perimeter's
+Access Level.
+   
+######################################### 
+Anything2Cloud
+
+You need to give new website users a globally unique identifier (GUID) using a service that takes in data points and returns a GUID. This data is sourced from both internal
+and external systems via HTTP calls that you will make via microservices within your pipeline. There will be tens of thousands of messages per second and that can be
+multi-threaded. and you worry about the backpressure on the system. How should you design your pipeline to minimize that backpressure?
+
+A. Call out to the service via HTTP.
+B. Create the pipeline statically in the class definition.
+C. Create a new object in the startBundle method of DoFn.
+
+D. Batch the job into ten-second increments.
+   
+######################################### 
+‘Question: 193 _—
+
+You are migrating your data warehouse to Google Cloud and decommissioning your on-premises data center. Because this is a priority for your company, you know that
+bandwidth will be made available for the initial data load to the cloud. The files being transferred are not large in number, but each file is 90 GB.
+
+Additionally, you want your transactional systems to continually update the warehouse on Google Cloud in real time. What tools should you use to migrate the data and
+ensure that it continues to write to your warehouse?
+
+A. Storage Transfer Service for the migration; Pub/Sub and Cloud Data Fusion for the real-time updates
+B. BigQuery Data Transfer Service for the migration; Pub/Sub and Dataproc for the real-time updates
+C. gsutil for the migration; Pub/Sub and Dataflow for the real-time updates
+
+D. gsutil for both the migration and the real-time updates
+   
+######################################### 
+‘Question: 197 _—
+
+Your new customer has requested daily reports that show their net consumption of Google Cloud compute resources and who used the resources. You need to quickly
+and efficiently generate these daily reports. What should you do?
+
+A. Do daily exports of Cloud Logging data to BigQuery. Create views filtering by project, log type, resource, and user.
+B. Filter data in Cloud Logging by project, resource, and user; then export the data in CSV format.
+C. Filter data in Cloud Logging by project, log type, resource, and user, then import the data into BigQuery.
+
+D. Export Cloud Logging data to Cloud Storage in CSV format. Cleanse the data using Dataprep, filtering by project, resource, and user.
+   
+######################################### 
+‘Question: 183 _—
+
+You are analyzing the price of a company's stock. Every 5 seconds, you need to compute a moving average of the past 30 seconds’ worth of data. You are reading data
+from Pub/Sub and using DataFlow to conduct the analysis. How should you set up your windowed pipeline?
+
+A. Use a fixed window with a duration of 5 seconds. Emit results by setting the following trigger: AfterProcessingTime.pastFirstElementinPane().plusDelayOf
+(Duration.standardSeconds(30))
+
+B. Use a fixed window with a duration of 30 seconds. Emit results by setting the following trigger: AfterWatermark.pastEndOfWindow().plusDelayOf
+(Duration.standardSeconds(5))
+
+C. Use a sliding window with a duration of 5 seconds. Emit results by setting the following trigger: AfterProcessingTime. pastFirstElementinPane().plusDelayOf
+(Duration.standardSeconds(30))
+
+D. Use a sliding window with a duration of 30 seconds and a period of 5 seconds. Emit results by setting the following trigger: AfterWatermark.pastEndOfWindow ()
+   
+######################################### 
+Question: 156 _—
+
+You receive data files in CSV format monthly from a third party. You need to cleanse this data, but every third month the schema of the files changes. Your requirements
+for implementing these transformations include:
+
+Executing the transformations on a schedule
+
+Enabling non-developer analysts to modify transformations
+
+Providing a graphical tool for designing transformations
+What should you do?
+
+B. Load each month's CSV data into BigQuery, and write a SQL query to transform the data to a standard schema. Merge the transformed tables together with a SQL
+query
+
+C. Help the analysts write a Dataflow pipeline in Python to perform the transformation. The Python code should be stored in a revision control system and modified as
+the incoming data's schema changes
+
+D. Use Apache Spark on Dataproc to infer the schema of the CSV file before creating a Dataframe. Then implement the transformations in Spark SQL before writing
+the data out to Cloud Storage and loading into BigQuery
+   
+######################################### 
+   
+######################################### 
+You have uploaded 5 years of log data to Cloud Storage. A user reported that some data points in the log data are outside of their expected ranges, which indicates
+
+Anything2Cloud
+
+errors. You need to address this issue and be able to run the process again in the future while keeping the original data for compliance reasons. What should you do?
+
+A. Import the data from Cloud Storage into BigQuery. Create a new BigQuery table, and skip the rows with errors.
+
+B. Create a Compute Engine instance and create a new copy of the data in Cloud Storage. Skip the rows with errors.
+
+“writes the updated records to a new dataset in Cloud Storage.
+
+D. Create a Dataflow workflow that reads the data from Cloud Storage, checks for values outside the expected range, sets the value to an appropriate default, and
+writes the updated records to the same dataset in Cloud Storage.
+   
+######################################### 
+‘Question: 163 _—
+
+You work for a global shipping company. You want to train a model on 40 TB of data to predict which ships in each geographic region are likely to cause delivery delays on
+any given day. The model will be based on multiple attributes collected from multiple sources. Telemetry data, including location in GeoJSON format, will be pulled from
+each ship and loaded every hour. You want to have a dashboard that shows how many and which ships are likely to cause delays within a region. You want to use a
+storage solution that has native functionality for prediction and geospatial processing. Which storage solution should you use?
+
+A. BigQuery
+B. Cloud Bigtable
+C. Cloud Datastore
+
+D. Cloud SQL for PostgreSQL
+   
+######################################### 
+Anything2Cloud
+
+You are updating the code for a subscriber to a Pub/Sub feed. You are concerned that upon deployment the subscriber may erroneously acknowledge messages, leading
+to message loss. Your subscriber is not set up to retain acknowledged messages. What should you do to ensure that you can recover from errors after deployment?
+
+A. Set up the Pub/Sub emulator on your local machine. Validate the behavior of your new subscriber logic before deploying it to production.
+
+B. Create a Pub/Sub snapshot before deploying new subscriber code. Use a Seek operation to re-deliver messages that became available after the snapshot was
+created.
+
+C. Use Cloud Build for your deployment. If an error occurs after deployment, use a Seek operation to locate a timestamp logged by Cloud Build at the start of the
+deployment.
+
+D. Enable dead-lettering on the Pub/Sub topic to capture messages that aren't successfully acknowledged. If an error occurs after deployment, re-deliver any
+messages captured by the dead-letter queue.
+   
+######################################### 
+‘Question: 151 ——_
+
+You need to create a new transaction table in Cloud Spanner that stores product sales data. You are deciding what to
+use as a primary key. From a performance perspective, which strategy should you choose?
+
+A. The current epoch time
+B. A concatenation of the product name and the current epoch time
+
+D. The original order identification number from the sales system, which is a monotonically increasing integer
+   
+######################################### 
+Anything2Cloud
+
+You are working on a linear regression model on BigQuery ML to predict a customer's likelihood of purchasing your company's products. Your model uses a city name
+variable as a key predictive component. In order to train and serve the model, your data must be organized in columns. You want to prepare your data using the least
+amount of coding while maintaining the predictable variables. What should you do?
+
+A. Create a new view with BigQuery that does not include a column with city information.
+B. Use SQL in BigQuery to transform the state column using a one-hot encoding method, and make each city a column with binary values.
+C. Use TensorFlow to create a categorical variable with a vocabulary list. Create the vocabulary file and upload that as part of your model to BigQuery ML.
+
+D. Use Cloud Data Fusion to assign each city to a region that is labeled as 1, 2, 3, 4, or 5, and then use that number to represent the city in the model.
+   
+######################################### 
+‘Question: 169 _—
+
+You need to deploy additional dependencies to all nodes of a Cloud Dataproc cluster at startup using an existing initialization action. Company security policies require
+that Cloud Dataproc nodes do not have access to the Internet so public initialization actions cannot fetch resources. What should you do?
+
+A. Deploy the Cloud SQL Proxy on the Cloud Dataproc master
+B. Use an SSH tunnel to give the Cloud Dataproc cluster access to the Internet
+C. Copy all dependencies to a Cloud Storage bucket within your VPC security perimeter
+
+D. Use Resource Manager to add the service account used by the Cloud Dataproc cluster to the Network User role
+   
+######################################### 
+‘Question: 165. _—
+
+You plan to deploy Cloud SQL using MySQL. You need to ensure high availability in the event of a zone failure. What should you do?
+
+A. Create a Cloud SQL instance in one zone, and create a failover replica in another zone within the same region.
+B. Create a Cloud SQL instance in one zone, and create a read replica in another zone within the same region.
+C. Create a Cloud SQL instance in one zone, and configure an external read replica in a zone in a different region.
+
+D. Create a Cloud SQL instance in a region, and configure automatic backup to a Cloud Storage bucket in the same region.
+   
+######################################### 
+‘Question: 179 _—
+
+You work for a financial institution that lets customers register online. As new customers register, their user data is sent to Pub/Sub before being ingested into
+
+BigQuery. For security reasons, you decide to redact your customers’ Government issued Identification Number while allowing customer service representatives to view
+the original values when necessary. What should you do?
+
+A. Use BigQuery's built-in AEAD encryption to encrypt the SSN column. Save the keys to a new table that is only viewable by permissioned users.
+B. Use BigQuery column-level security. Set the table permissions so that only members of the Customer Service user group can see the SSN column.
+C. Before loading the data into BigQuery, use Cloud Data Loss Prevention (DLP) to replace input values with a cryptographic hash.
+
+D. Before loading the data into BigQuery, use Cloud Data Loss Prevention (DLP) to replace input values with a cryptographic format-preserving encryption token.
+   
+######################################### 
+‘Question: 199 _—
+
+Your startup has a web application that currently serves customers out of a single region in Asia. You are targeting funding that will allow your startup to serve customers
+
+globally. Your current goal is to optimize for cost, and your post-funding goal is to optimize for global presence and performance. You must use a native
+JDBC driver. What should you do?
+
+A. Use Cloud Spanner to configure a single region instance initially, and then configure multi-region Cloud Spanner instances after securing funding.
+B. Use a Cloud SQL for PostgreSQL highly available instance first, and Bigtable with US, Europe, and Asia replication after securing funding.
+C. Use a Cloud SQL for PostgreSQL zonal instance first, and Bigtable with US, Europe, and Asia after securing funding.
+
+D. Use a Cloud SQL for PostgreSQL zonal instance first, and Cloud SQL for PostgreSQL with highly available configuration after securing funding.
+   
+######################################### 
+Anything2Cloud
+
+You are building a report-only data warehouse where the data is streamed into BigQuery via the streaming API. Following Google's best practices, you have both a staging
+
+and a production table for the data. How should you design your data loading to ensure that there is only one master dataset without affecting performance on either the
+ingestion or reporting pieces?
+
+A. Have a staging table that is an append-only model, and then update the production table every three hours with the changes written to staging.
+B. Have a staging table that is an append-only model, and then update the production table every ninety minutes with the changes written to staging.
+C. Have a staging table that moves the staged data over to the production table and deletes the contents of the staging table every three hours.
+
+D. Have a staging table that moves the staged data over to the production table and deletes the contents of the staging table every thirty minutes.
+   
+######################################### 
+“Question: 167 _—
+
+You are planning to migrate your current on-premises Apache Hadoop deployment to the cloud. You need to ensure that the deployment is as fault-tolerant and cost-
+effective as possible for long-running batch jobs. You want to use a managed service. What should you do?
+
+A. Deploy a Dataproc cluster. Use a standard persistent disk and 50% preemptible workers. Store data in Cloud Storage, and change references in scripts from hdfs://
+to gs://
+
+B. Deploy a Dataproc cluster. Use an SSD persistent disk and 50% preemptible workers. Store data in Cloud Storage, and change references in scripts from hdfs:// to
+gs://
+
+C. Install Hadoop and Spark on a 10-node Compute Engine instance group with standard instances. Install the Cloud Storage connector, and store the data in Cloud
+Storage. Change references in scripts from hdfs:// to gs://
+
+D. Install Hadoop and Spark on a 10-node Compute Engine instance group with preemptible instances. Store data in HDFS. Change references in scripts from hdfs://
+to gs://
+   
+######################################### 
+‘Question: 177 _—
+
+A shipping company has live package-tracking data that is sent to an Apache Kafka stream in real time. This is then loaded into BigQuery. Analysts in your company want
+to query the tracking data in BigQuery to analyze geospatial trends in the lifecycle of a package. The table was originally created with ingest-date partitioning. Over time,
+the query processing time has increased. You need to implement a change that would improve query performance in BigQuery. What should you do?
+
+A. Implement clustering in BigQuery on the ingest date column.
+B. Implement clustering in BigQuery on the package-tracking ID column.
+C. Tier older data onto Cloud Storage files and create a BigQuery table using Cloud Storage as an external data source.
+
+D. Re-create the table using data partitioning on the package delivery date.
+   
+######################################### 
+Anything2Cloud
+
+You want to build a managed Hadoop system as your data lake. The data transformation process is composed of a series of Hadoop jobs executed in sequence.
+
+To accomplish the design of separating storage from compute, you decided to use the Cloud Storage connector to store all input data, output data, and intermediary data.
+However, you noticed that one Hadoop job runs very slowly with Cloud Dataproc, when compared with the on-premises bare-metal Hadoop environment (8-core nodes
+with 100-GB RAM). Analysis shows that this particular Hadoop job is disk I/O intensive. You want to resolve the issue. What should you do?
+
+A. Allocate sufficient memory to the Hadoop cluster, so that the intermediary data of that particular Hadoop job can be held in memory
+B. Allocate sufficient persistent disk space to the Hadoop cluster, and store the intermediate data of that particular Hadoop job on native HDFS
+C. Allocate more CPU cores of the virtual machine instances of the Hadoop cluster so that the networking bandwidth for each instance can scale up
+
+D. Allocate additional network interface card (NIC), and configure link aggregation in the operating system to use the combined throughput when working with Cloud
+Storage
+   
+######################################### 
+‘Question: 173 ——_
+
+You want to archive data in Cloud Storage. Because some data is very sensitive, you want to use the ‘Trust No One’ (TNO) approach to encrypt your data to prevent the
+cloud provider staff from decrypting your data. What should you do?
+
+A. Use gcloud kms keys create to create a symmetric key. Then use gcloud kms encrypt to encrypt each archival file with the key and unique additional authenticated
+data (AAD). Use gsutil cp to upload each encrypted file to the Cloud Storage bucket, and keep the AAD outside of Google Cloud.
+
+B. Use gcloud kms keys create to create a symmetric key. Then use gcloud kms encrypt to encrypt each archival file with the key. Use gsutil cp to upload each
+encrypted file to the Cloud Storage bucket. Manually destroy the key previously used for encryption, and rotate the key once.
+
+C. Specify customer-supplied encryption key (CSEK) in the .boto configuration file. Use gsutil cp to upload each archival file to the Cloud Storage bucket. Save the
+CSEK in Cloud Memorystore as permanent storage of the secret.
+
+D. Specify customer-supplied encryption key (CSEK) in the .boto configuration file. Use gsutil cp to upload each archival file to the Cloud Storage bucket. Save the
+CSEK in a different project that only the security team can access.
+   
+######################################### 
+‘Question: 153 _—
+
+Each analytics team in your organization is running BigQuery jobs in their own projects. You want to enable each team to
+monitor slot usage within their projects.
+What should you do?
+
+A. Create a Cloud Monitoring dashboard based on the BigQuery metric query/scanned_bytes
+
+C. Create a log export for each project, capture the BigQuery job execution logs, create a custom metric based on the totalSlotMs, and create a Cloud Monitoring
+dashboard based on the custom metric
+
+D. Create an aggregated log export at the organization level, capture the BigQuery job execution logs, create a custom metric based on the totalSlotMs, and create a
+Cloud Monitoring dashboard based on the custom metric
+   
+######################################### 
+Anything2Cloud
+
+You work for a shipping company that has distribution centers where packages move on delivery lines to route them properly. The company wants to add cameras to the
+
+delivery lines to detect and track any visual damage to the packages in transit. You need to create a way to automate the detection of damaged packages and flag them
+for human review in real time while the packages are in transit. Which solution should you choose?
+
+A. Use BigQuery machine learning to be able to train the model at scale, so you can analyze the packages in batches.
+B. Train an AUtoML model on your corpus of images, and build an API around that model to integrate with the package tracking applications.
+C. Use the Cloud Vision API to detect for damage, and raise an alert through Cloud Functions. Integrate the package tracking applications with this function.
+
+D. Use TensorFlow to create a model that is trained on your corpus of images. Create a Python notebook in Cloud Datalab that uses this model so you can analyze for
+damaged packages.
+   
+######################################### 
+‘Question: 189 _
+
+You are testing a Dataflow pipeline to ingest and transform text files. The files are compressed gzip, errors are written to a dead-letter queue, and you are using
+Sidelnputs to join data. You noticed that the pipeline is taking longer to complete than expected; what should you do to expedite the Dataflow job?
+
+A. Switch to compressed Avro files.
+B. Reduce the batch size.
+
+C. Retry records that throw an error.
+   
+######################################### 
+Anything2Cloud
+
+You are migrating an application that tracks library books and information about each book, such as author or year published, from an on-premises data warehouse to
+
+BigQuery. In your current relational database, the author information is kept in a separate table and joined to the book information on a common key. Based on Google's
+recommended practice for schema design, how would you structure the data to ensure optimal speed of queries about the author of each book that has been borrowed?
+
+A. Keep the schema the same, maintain the different tables for the book and each of the attributes, and query as you are doing today.
+
+B. Create a table that is wide and includes a column for each attribute, including the author's first name, last name, date of birth, etc.
+
+D. Keep the schema the same, create a view that joins all of the tables, and always query the view.
+   
+######################################### 
+Anything2Cloud
+
+You work for a large financial institution that is planning to use Dialogflow to create a chatbot for the company's mobile app. You have reviewed old chat logs and tagged
+each conversation for intent based on each customer's stated intention for contacting customer service. About 70% of customer requests are simple requests that are
+solved within 10 intents. The remaining 30% of inquiries require much longer, more complicated requests. Which intents should you automate first?
+
+B. Automate the more complicated requests first because those require more of the agents’ time.
+
+C. Automate a blend of the shortest and longest intents to be representative of all intents.
+
+D. Automate intents in places where common words such as ‘payment’ appear only once so the software isn't confused.
+   
+######################################### 
+‘Question: 172 _—
+
+You need to choose a database to store time series CPU and memory usage for millions of computers. You need to store
+this data in one-second interval samples. Analysts will be performing real-time, ad hoc analytics against the database. You
+want to avoid being charged for every query executed and ensure that the schema design will allow for future growth of the
+dataset. Which database and data model should you choose?
+
+A. Create a table in BigQuery, and append the new samples for CPU and memory to the table
+B. Create a wide table in BigQuery, create a column for the sample value at each second, and update the row with the interval for each second
+C. Create a narrow table in Bigtable with a row key that combines the Computer Engine computer identifier with the sample time at each second
+
+D. Create a wide table in Bigtable with a row key that combines the|computer identifier with the sample time at each minute, and combine the values for each second
+as column data.
+   
+######################################### 
+Anything2Cloud
+
+Data Analysts in your company have the Cloud IAM Owner role assigned to them in their projects to allow them to work with multiple GCP products in their projects. Your
+
+organization requires that all BigQuery data access logs be retained for 6 months. You need to ensure that only audit personnel in your company can access the data
+access logs for all projects. What should you do?
+
+A. Enable data access logs in each Data Analyst's project. Restrict access to Stackdriver Logging via Cloud IAM roles.
+
+B. Export the data access logs via a project-level export sink to a Cloud Storage bucket in the Data Analysts’ projects. Restrict access to the Cloud Storage bucket.
+
+C. Export the data access logs via a project-level export sink to a Cloud Storage bucket in a newly created projects for audit logs. Restrict access to the project with
+the exported logs.
+
+Sr that
+
+gantains,theexportedlogs.
+   
+######################################### 
+‘Question: 162, _
+
+You work for an advertising company, and you've developed a Spark ML model to predict click-through rates at advertisement blocks. You've been developing everything
+at your on-premises data center, and now your company is migrating to Google Cloud. Your data center will be closing soon, so a rapid lift-and-shift migration is
+necessary. However, the data you've been using will be migrated to migrated to BigQuery. You periodically retrain your Spark ML models, so you need to migrate existing
+training pipelines to Google Cloud. What should you do?
+
+A. Use Vertex Al for training existing Spark ML models
+B. Rewrite your models on TensorFlow, and start using Vertex Al
+C. Use Dataproc for training existing Spark ML models, but start reading data directly from BigQuery
+
+D. Spin up a Spark cluster on Compute Engine, and train Spark ML models on the data exported from BigQuery
+   
+######################################### 
+Anything2Cloud
+
+Your company currently runs a large on-premises cluster using Spark, Hive, and HDFS in a colocation facility. The cluster is designed to accommodate peak usage on the
+system; however, many jobs are batch in nature, and usage of the cluster fluctuates quite dramatically. Your company is eager to move to the cloud to reduce the
+overhead associated with on-premises infrastructure and maintenance and to benefit from the cost savings. They are also hoping to modernize their existing
+infrastructure to use more serverless offerings in order to take advantage of the cloud. Because of the timing of their contract renewal with the colocation facility, they
+
+have only 2 months for their initial migration. How would you recommend they approach their upcoming migration strategy so they can maximize their cost savings in the
+cloud while still executing the migration in time?
+
+A. Migrate the workloads to Dataproc plus HDFS; modernize later.
+B. Migrate the workloads to Dataproc plus Cloud Storage; modernize later.
+C. Migrate the Spark workload to Dataproc plus HDFS, and modernize the Hive workload for BigQuery.
+
+D. Modernize the Spark workload for Dataflow and the Hive workload for BigQuery.
+   
+######################################### 
+‘Question: 154 _—
+
+You are operating a streaming Cloud Dataflow pipeline. Your engineers have a new version of the pipeline with a different windowing algorithm and triggering strategy.
+You want to update the running pipeline with the new version. You want to ensure that no data is lost during the update. What should you do?
+
+A. Update the Cloud Dataflow pipeline inflight by passing the -update option with the --jobName set to the existing job name
+B. Update the Cloud Dataflow pipeline inflight by passing the --update option with the -jobName set to a new unique job name
+
+C. Stop the Cloud Dataflow pipeline with the Cancel option. Create a new Cloud Dataflow job with the updated code
+   
+######################################### 
+Anything2Cloud
+
+Your company is selecting a system to centralize data ingestion and delivery. You are considering
+messaging and data integration systems to address the requirements. The key requirements are:
+The ability to seek to a particular offset in a topic, possibly back to the start of all data ever captured
+
+Support for publish/subscribe semantics on hundreds of topics
+
+Retain per-key ordering -
+
+Which system should you choose?
+
+A. Apache Kafka
+B. Cloud Storage
+C. Dataflow
+
+D. Firebase Cloud Messaging
+   
+######################################### 
+You are designing a pipeline that publishes application events to a Pub/Sub topic. Although message ordering is not important, you need to be able to aggregate events
+
+across disjoint hourly intervals before loading the results to BigQuery for analysis. What technology should you use to process and load this data to
+BigQuery while ensuring that it will scale with large volumes of events?
+
+A. Create a Cloud Function to perform the necessary data processing that executes using the Pub/Sub trigger every time a new message is published to the topic.
+B. Schedule a Cloud Function to run hourly, pulling all available messages from the Pub/Sub topic and performing the necessary aggregations.
+C. Schedule a batch Dataflow job to run hourly, pulling all available messages from the Pub/Sub topic and performing the necessary aggregations.
+
+D. Create a streaming Dataflow job that reads continually from the Pub/Sub topic and performs the necessary aggregations using tumbling windows.
+
+“Question: 184 “—
+
+   
+######################################### 
+Anything2Cloud
+
+You are migrating your data warehouse to BigQuery. You have migrated all of your data into tables in a dataset. Multiple users from your organization will be using the
+data. They should only see certain tables based on their team membership. How should you set user permissions?
+
+A. Assign the users/groups data viewer access at the table level for each table
+B. Create SQL views for each team in the same dataset in which the data resides, and assign the users/groups data viewer access to the SQL views
+C. Create authorized views for each team in the same dataset in which the data resides, and assign the users/groups data viewer access to the authorized views
+
+D. Create authorized views for each team in datasets created for each team. Assign the authorized views data viewer access to the dataset in which the data resides.
+Assign the users/groups data viewer access to the datasets in which the authorized views reside
+   
+######################################### 
+‘Question: 190 _—
+
+You are building a real-time prediction engine that streams files, which may contain Pll (personal identifiable information) data, into Cloud Storage and eventually into
+BigQuery. You want to ensure that the sensitive data is masked but still maintains referential integrity, because names and emails are often used as join keys.
+How should you use the Cloud Data Loss Prevention API (DLP API) to ensure that the Pll data is not accessible by unauthorized individuals?
+
+A. Create a pseudonym by replacing the Pll data with cryptogenic tokens, and store the non-tokenized data in a locked-down button.
+B. Redact all Pll data, and store a version of the unredacted data in a locked-down bucket.
+
+C. Scan every table in BigQuery, and mask the data it finds that has Pll.
+
+D. Create a pseudonym by replacing Pll data with a cryptographic format-preserving token.
+   
+######################################### 
+Anything2Cloud
+
+Your company is implementing a data warehouse using BigQuery, and you have been tasked with designing the data model. You move your on-premises sales data
+warehouse with a star data schema to BigQuery but notice performance issues when querying the data of the past 30 days. Based on Google's recommended practices,
+what should you do to speed up the query without increasing storage costs?
+
+A. Denormalize the data.
+B. Shard the data by customer ID.
+
+C. Materialize the dimensional data in views.
+   
+######################################### 
+You want to migrate an on-premises Hadoop system to Cloud Dataproc. Hive is the primary tool in use, and the data format is Optimized Row Columnar (ORC).
+
+All ORC files have been successfully copied to a Cloud Storage bucket. You need to replicate some data to the cluster's local Hadoop Distributed File System
+(HDFS) to maximize performance. What are two ways to start using Hive in Cloud Dataproc? (Choose two.)
+
+A. Run the gsutil utility to transfer all ORC files from the Cloud Storage bucket to HDFS. Mount the Hive tables locally.
+
+B. Run the gsutil utility to transfer all ORC files from the Cloud Storage bucket to any node of the Dataproc cluster. Mount the Hive tables locally.
+
+— .
+
+HDFS. Mount the Hive tables from HDFS.
+
+WDMLeveragelCloud'!storage’connector forHadoop tolmountthe!OROfilesiasjexternal Hive tables. Replicate external Hive tables to the native ones.
+
+E. Load the ORC files into BigQuery. Leverage BigQuery connector for Hadoop to mount the BigQuery tables as external Hive tables. Replicate external Hive tables to
+the native ones.
+
+“Question: 158 “—
+
+   
+######################################### 
+Anything2Cloud
+
+You are using Bigtable to persist and serve stock market data for each of the major indices. To serve the trading application, you need to access only the most recent
+stock prices that are streaming in. How should you design your row key and tables to ensure that you can access the data with the simplest query?
+
+A. Create one unique table for all of the indices, and then use the index and timestamp as the row key design.
+B. Create one unique table for all of the indices, and then use a reverse timestamp as the row key design.
+C. For each index, have a separate table and use a timestamp as the row key design.
+
+D. For each index, have a separate table and use a reverse timestamp as the row key design.
+   
+######################################### 
+‘Question: 196 _—
+
+You issue a new batch job to Dataflow. The job starts successfully, processes a few elements, and then suddenly fails and shuts down. You navigate to the
+Dataflow monitoring interface where you find errors related to a particular DoFn in your pipeline. What is the most likely cause of the errors?
+
+A. Job validation
+B. Exceptions in worker code
+C. Graph or pipeline construction
+
+D. Insufficient permissions
+   
+######################################### 
+Anything2Cloud
+
+You need to migrate 1 PB of data from an on-premises data center to Google Cloud. Data transfer time during the migration should take only a few hours. You want to
+follow Google-recommended practices to facilitate the large data transfer over a secure connection. What should you do?
+
+A. Establish a Cloud Interconnect connection between the on-premises data center and Google Cloud, and then use the Storage Transfer Service.
+B. Use a Transfer Appliance and have engineers manually encrypt, decrypt, and verify the data.
+C. Establish a Cloud VPN connection, start gcloud compute scp jobs in parallel, and run checksums to verify the data.
+
+D. Reduce the data into 3 TB batches, transfer the data using gsutil, and run checksums to verify the data.
+   
