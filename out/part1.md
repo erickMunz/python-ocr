@@ -139,23 +139,10 @@ B. Grant the Project Owner role to a service account, and run the job with it
 
 D. Use a user account with the Project Viewer role on the Cloud Dataproc cluster to read the batch files and write to BigQuery
    
-######################################### 
-Anything2Cloud
-
-You set up a streaming data insert into a Redis cluster via a Kafka cluster. Both clusters are running on Compute Engine instances. You need to encrypt data at rest with
-encryption keys that you can create, rotate, and destroy as needed. What should you do?
-
-A. Create a dedicated service account, and use encryption at rest to reference your data stored in your Compute Engine cluster instances as part of your API service
-calls.
-
-C. Create encryption keys locally. Upload your encryption keys to Cloud Key Management Service. Use those keys to encrypt your data in all of the Compute Engine
-cluster instances.
-
-D. Create encryption keys in Cloud Key Management Service. Reference those keys in your API service calls when accessing the data in your Compute Engine cluster
-instances.
    
 ######################################### 
-‘Question: 15 _—
+---
+## Question: 15 
 
 Your globally distributed auction application allows users to bid on items. Occasionally, users place identical bids at nearly identical times, and different application
 servers process those bids. Each bid event contains the item, amount, user, and timestamp. You want to collate those bid events into a single location in real time to
@@ -163,7 +150,7 @@ determine which user bid first. What should you do?
 
 A. Create a file on a shared file and have the application servers write all bid events to that file. Process the file with Apache Hadoop to identify which user bid first.
 
-B. Have each application server write the bid events to Cloud Pub/Sub as they occur. Push the events from Cloud Pub/Sub to a custom endpoint that writes the bid
+#### B. Have each application server write the bid events to Cloud Pub/Sub as they occur. Push the events from Cloud Pub/Sub to a custom endpoint that writes the bid
 event information into Cloud SQL.
 
 C. Set up a MySQL database for each application server to write bid events into. Periodically query each of those distributed MySQL databases and update a master
@@ -173,14 +160,15 @@ D. Have each application server write the bid events to Google Cloud Pub/Sub as 
 Dataflow. Give the bid for each item to the user in the bid event that is processed first.
    
 ######################################### 
-Anything2Cloud
+---
+## Question
 
 You architect a system to analyze seismic data. Your extract, transform, and load (ETL) process runs as a series of MapReduce jobs on an Apache Hadoop cluster. The
 ETL process takes days to process a data set because some steps are computationally expensive. Then you discover that a sensor calibration step has been omitted.
 How should you change your ETL process to carry out sensor calibration systematically in the future?
 
 A. Modify the transformMapReduce jobs to apply sensor calibration before they do anything else.
-B. Introduce a new MapReduce job to apply sensor calibration to raw data, and ensure all other MapReduce jobs are chained after this.
+#### B. Introduce a new MapReduce job to apply sensor calibration to raw data, and ensure all other MapReduce jobs are chained after this.
 C. Add sensor calibration data to the output of the ETL process, and document that all users need to apply sensor calibration themselves.
 
 D. Develop an algorithm through simulation to predict variance of data output from the last MapReduce job based on calibration factors, and apply the correction to
@@ -271,7 +259,8 @@ D. Increase the amount of concurrent slots per project at the Quotas page at the
    
    
 ######################################### 
-‘Question: 9 _—
+---
+## Question: 9 _—
 
 You work for an airline and you need to store weather data in a BigQuery table. Weather data will be used as input to a machine learning model. The model only uses the
 last 30 days of weather data. You want to avoid storing unnecessary data and minimize costs. What should you do?
@@ -279,35 +268,13 @@ last 30 days of weather data. You want to avoid storing unnecessary data and min
 A. Create a BigQuery table where each record has an ingestion timestamp. Run a scheduled query to delete all the rows with an ingestion timestamp older than 30
 days.
 
-B. Create a BigQuery table partitioned by datetime value of the weather date. Set up partition expiration to 30 days.
+#### B. Create a BigQuery table partitioned by datetime value of the weather date. Set up partition expiration to 30 days.
+
 C. Create a BigQuery table partitioned by ingestion time. Set up partition expiration to 30 days.
 
 D. Create a BigQuery table with a datetime column for the day the weather data refers to. Run a scheduled query to delete rows with a datetime value older than 30
 days.
-   
-######################################### 
-‘Question: 33 _—
 
-You are designing storage for 20 TB of text files as part of deploying a data pipeline on Google Cloud. Your input data is in CSV format. You want to minimize the cost of
-querying aggregate values for multiple users who will query the data in Cloud Storage with multiple engines. Which storage service and schema design should you use?
-
-A. Use Cloud Bigtable for storage. Install the HBase shell on a Compute Engine instance to query the Cloud Bigtable data.
-B. Use Cloud Bigtable for storage. Link as permanent tables in BigQuery for query.
-C. Use Cloud Storage for storage. Link as permanent tables in BigQuery for query. —
-
-D. Use Cloud Storage for storage. Link as temporary tables in BigQuery for query.
-   
-######################################### 
-‘Question: 39 ——_
-
-You are responsible for writing your company's ETL pipelines to run on an Apache Hadoop cluster. The pipeline will
-require some checkpointing and splitting pipelines. Which method should you use to write the pipelines?
-
-A. PigLatin using Pig —
-B. HiveQL using Hive
-C. Java using MapReduce
-
-D. Python using MapReduce
    
 ######################################### 
 ‘Question: 25 _—
@@ -715,7 +682,9 @@ C. Use WHERE date BETWEEN YYYY-MM-DD AND YYYY-MM-DD
 D. Use SELECT IF.(date >= YYYY-MM-DD AND date <= YYYY-MM-DD
    
 ######################################### 
-‘Question: 25 _—
+---
+
+## Question: 25
 
 You are integrating one of your internal IT applications and Google BigQuery, so users can query BigQuery from the application's interface. You do not want individual
 
@@ -724,7 +693,7 @@ you do?
 
 A. Create groups for your users and give those groups access to the dataset
 B. Integrate with a single sign-on (SSO) platform, and pass each user's credentials along with the query request
-C. Create a service account and grant dataset access to that account. Use the service account's private key to access the dataset
+#### C. Create a service account and grant dataset access to that account. Use the service account's private key to access the dataset
 
 D. Create a dummy user and grant dataset access to that user. Store the username and password for that user in a file on the files system, and use those credentials
 to access the BigQuery dataset
@@ -1163,7 +1132,8 @@ B. Create a transactional database that monitors the pending messages.
 D. Create a new Pub/Sub push subscription to monitor the orders processed in the agent's system.
    
 ######################################### 
-Anything2Cloud
+---
+## Question
 
 You set up a streaming data insert into a Redis cluster via a Kafka cluster. Both clusters are running on Compute Engine instances. You need to encrypt data at rest with
 encryption keys that you can create, rotate, and destroy as needed. What should you do?
@@ -1171,16 +1141,16 @@ encryption keys that you can create, rotate, and destroy as needed. What should 
 A. Create a dedicated service account, and use encryption at rest to reference your data stored in your Compute Engine cluster instances as part of your API service
 calls.
 
-B. Create encryption keys in Cloud Key Management Service. Use those keys to encrypt your data in all of the Compute Engine cluster instances.
+#### B. Create encryption keys in Cloud Key Management Service. Use those keys to encrypt your data in all of the Compute Engine cluster instances.
 
 C. Create encryption keys locally. Upload your encryption keys to Cloud Key Management Service. Use those keys to encrypt your data in all of the Compute Engine
 cluster instances.
 
-D. Create encryption keys in Cloud Key Management Service. Reference those keys in your API service calls when accessing the data in your Compute Engine cluster
+#### D. Create encryption keys in Cloud Key Management Service. Reference those keys in your API service calls when accessing the data in your Compute Engine cluster
 instances.
    
 ######################################### 
-Anything2Cloud
+## Question
 
 You have a table that contains millions of rows of sales data, partitioned by date. Various applications and users query this data many times a minute. The query requires
 aggregating values by using AVG, MAX, and SUM, and does not require joining to other tables. The required aggregations are only computed over the past year of data,
@@ -1188,61 +1158,35 @@ though you need to retain full historical data in the base tables. You want to e
 reducing computation cost, maintenance overhead, and duration. What should you do?
 
 A. Create a materialized view to aggregate the base table data. Include a filter clause to specify the last one year of partitions.
-B. Create a materialized view to aggregate the base table data. Configure a partition expiration on the base table to retain only the last one year of partitions.
+#### B. Create a materialized view to aggregate the base table data. Configure a partition expiration on the base table to retain only the last one year of partitions.
 C. Create a view to aggregate the base table data. Include a filter clause to specify the last year of partitions.
 
 D. Create a new table that aggregates the base table data. Include a filter clause to specify the last year of partitions. Set up a scheduled query to recreate the new
 table every hour.
    
-######################################### 
-‘Question: 35 _—
-
-Your globally distributed auction application allows users to bid on items. Occasionally, users place identical bids at nearly identical times, and different application
-servers process those bids. Each bid event contains the item, amount, user, and timestamp. You want to collate those bid events into a single location in real time to
-determine which user bid first. What should you do?
-
-A. Create a file on a shared file and have the application servers write all bid events to that file. Process the file with Apache Hadoop to identify which user bid first.
-
-C. Set up a MySQL database for each application server to write bid events into. Periodically query each of those distributed MySQL databases and update a master
-
-MySQL database with bid event information.
-
-D. Have each application server write the bid events to Google Cloud Pub/Sub as they occur. Use a pull subscription to pull the bid events using Google Cloud
-Dataflow. Give the bid for each item to the user in the bid event that is processed first.
    
 ######################################### 
-‘Question: 33 _—
+---
+## Question: 33 _—
 
 You are designing storage for 20 TB of text files as part of deploying a data pipeline on Google Cloud. Your input data is in CSV format. You want to minimize the cost of
 querying aggregate values for multiple users who will query the data in Cloud Storage with multiple engines. Which storage service and schema design should you use?
 
 A. Use Cloud Bigtable for storage. Install the HBase shell on a Compute Engine instance to query the Cloud Bigtable data.
 B. Use Cloud Bigtable for storage. Link as permanent tables in BigQuery for query.
-C. Use Cloud Storage for storage. Link as permanent tables in BigQuery for query.
+#### C. Use Cloud Storage for storage. Link as permanent tables in BigQuery for query.
 
 D. Use Cloud Storage for storage. Link as temporary tables in BigQuery for query.
    
-######################################### 
-‘Question: 9 _—
-
-You work for an airline and you need to store weather data in a BigQuery table. Weather data will be used as input to a machine learning model. The model only uses the
-last 30 days of weather data. You want to avoid storing unnecessary data and minimize costs. What should you do?
-
-A. Create a BigQuery table where each record has an ingestion timestamp. Run a scheduled query to delete all the rows with an ingestion timestamp older than 30
-days.
-
-C. Create a BigQuery table partitioned by ingestion time. Set up partition expiration to 30 days.
-
-D. Create a BigQuery table with a datetime column for the day the weather data refers to. Run a scheduled query to delete rows with a datetime value older than 30
-days.
    
 ######################################### 
-‘Question: 39 ——_
+---
+## Question: 39
 
 You are responsible for writing your company's ETL pipelines to run on an Apache Hadoop cluster. The pipeline will
 require some checkpointing and splitting pipelines. Which method should you use to write the pipelines?
 
-A. PigLatin using Pig
+#### A. PigLatin using Pig
 B. HiveQL using Hive
 C. Java using MapReduce
 
