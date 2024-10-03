@@ -37,10 +37,10 @@ MJTelco is building a custom interface to share data. They have these requiremen
 
 Which combination of Google Cloud Platform products should you recommend?
 
-#### A. Cloud Datastore and Cloud Bigtable
+A. Cloud Datastore and Cloud Bigtable
 B. Cloud Bigtable and Cloud SQL
 
-C. BigQuery and Cloud Bigtable
+#### C. BigQuery and Cloud Bigtable
 
 D. BigQuery and Cloud Storage
    
@@ -173,41 +173,20 @@ C. Add sensor calibration data to the output of the ETL process, and document th
 
 D. Develop an algorithm through simulation to predict variance of data output from the last MapReduce job based on calibration factors, and apply the correction to
 all data.
+
+   
+
    
 ######################################### 
-‘Question: 31, _—
-
-You are designing storage for very large text files for a data pipeline on Google Cloud. You want to support ANSI SQL queries. You also want to support compression and
-parallel load from the input locations using Google recommended practices. What should you do?
-
-A. Transform text files to compressed Avro using Cloud Dataflow. Use BigQuery for storage and query.
-
-C. Compress text files to gzip using the Grid Computing Tools. Use BigQuery for storage and query.
-
-D. Compress text files to gzip using the Grid Computing Tools. Use Cloud Storage, and then import into Cloud Bigtable for query.
-   
-######################################### 
-‘Question: 35 ——_
-
-Your financial services company is moving to cloud technology and wants to store 50 TB of financial time-series data in the cloud. This data is updated frequently and
-
-new data will be streaming in all the time. Your company also wants to move their existing Apache Hadoop jobs to the cloud to get insights into this data.
-Which product should they use to store the data?
-
-B. Google BigQuery
-C. Google Cloud Storage
-
-D. Google Cloud Datastore
-   
-######################################### 
-‘Question: 7 _—
+---
+## Question: 7
 
 You need to connect multiple applications with dynamic public IP addresses to a Cloud SQL instance. You configured users with strong passwords and enforced the SSL
 connection to your Cloud SQL instance. You want to use Cloud SQL public IP and ensure that you have secured connections. What should you do?
 
 A. Add CIDR 0.0.0.0/0 network to Authorized Network. Use Identity and Access Management (IAM) to add users.
 B. Add all application networks to Authorized Network and regularly update them.
-C. Leave the Authorized Network empty. Use Cloud SQL Auth proxy on all applications.
+#### C. Leave the Authorized Network empty. Use Cloud SQL Auth proxy on all applications.
 
 D. Add CIDR 0.0.0.0/0 network to Authorized Network. Use Cloud SQL Auth proxy on all applications.
    
@@ -441,7 +420,8 @@ C. Add a trya€} catch block to your DoFn that transforms the data, write erron
 D. Add a trya€} catch block to your DoFn that transforms the data, use a sideOutput to create a PCollection that can be stored to Pub/Sub later.
    
 ######################################### 
-‘Question: 45 _—
+---
+## Question: 45
 
 After migrating ETL jobs to run on BigQuery, you need to verify that the output of the migrated jobs is the same as the output of the original. You've loaded a table
 
@@ -453,7 +433,7 @@ A. Select random samples from the tables using the RAND() function and compare t
 
 B. Select random samples from the tables using the HASH() function and compare the samples.
 
-C. Use a Dataproc cluster and the BigQuery Hadoop connector to read the data from each table and calculate a hash from non-timestamp columns of the table after
+#### C. Use a Dataproc cluster and the BigQuery Hadoop connector to read the data from each table and calculate a hash from non-timestamp columns of the table after
 sorting. Compare the hashes of each table.
 
 D. Create stratified random samples using the OVER() function and compare equivalent samples from each table.
@@ -470,22 +450,11 @@ C. Limit the query columns being pulled in the final result.
 
 D. Create a materialized view based off of the query being run.
    
-######################################### 
-Anything2Cloud
-
-You are developing an application on Google Cloud that will automatically generate subject labels for users' blog posts. You are under competitive pressure to add this
-feature quickly, and you have no additional developer resources. No one on your team has experience with machine learning. What should you do?
-
-B. Call the Cloud Natural Language API from your application. Process the generated Sentiment Analysis as labels.
-
-C. Build and train a text classification model using TensorFlow. Deploy the model using Cloud Machine Learning Engine. Call the model from your application and
-process the results as labels.
-
-D. Build and train a text classification model using TensorFlow. Deploy the model using a Kubernetes Engine cluster. Call the model from your application and process
-the results as labels.
    
 ######################################### 
-‘Question: 8 _—
+---
+
+## Question: 8
 
 You are migrating a large number of files from a public HTTPS endpoint to Cloud Storage. The files are protected from unauthorized access using signed URLs. You
 created a TSV file that contains the list of object URLs and started a transfer job by using Storage Transfer Service. You notice that the job has run for a long time and
@@ -497,31 +466,11 @@ iterate through the TSV file and download the remaining URLs to the FUSE mount p
 
 B. Renew the TLS certificate of the HTTPS endpoint. Remove the completed files from the TSV file and rerun the Storage Transfer Service job.
 
-C. Create a new TSV file for the remaining files by generating signed URLs with a longer validity period. Split the TSV file into multiple smaller files and submit them as
+#### C. Create a new TSV file for the remaining files by generating signed URLs with a longer validity period. Split the TSV file into multiple smaller files and submit them as
 separate Storage Transfer Service jobs in parallel.
 
 D. Update the file checksums in the TSV file from using MD5 to SHA256. Remove the completed files from the TSV file and rerun the Storage Transfer Service job.
    
-######################################### 
-‘Question: 34, _—
-
-You are designing storage for two relational tables that are part of a 10-TB database on Google Cloud. You want to support transactions that scale horizontally.
-You also want to optimize data for range queries on non-key columns. What should you do?
-
-A. Use Cloud SQL for storage. Add secondary indexes to support query patterns.
-B. Use Cloud SQL for storage. Use Cloud Dataflow to transform data to support query patterns.
-
-D. Use Cloud Spanner for storage. Use Cloud Dataflow to transform data to support query patterns.
-   
-######################################### 
-‘Question: 38 _—
-
-Your neural network model is taking days to train. You want to increase the training speed. What can you do?
-
-A. Subsample your test dataset.
-C. Increase the number of input features to your model.
-
-D. Increase the number of layers in your neural network.
    
 ######################################### 
 ---
@@ -573,7 +522,8 @@ D. 1. Create a metrics table partitioned by timestamp.
    
 
 ######################################### 
-Anything2Cloud
+---
+## Question
 
 Your organization has been collecting and analyzing data in Google BigQuery for 6 months. The majority of the data analyzed is placed in a time-partitioned table named
 events_partitioned. To reduce the cost of queries, your organization created a view called events, which queries only the last 14 days of data. The view is described in
@@ -587,7 +537,7 @@ B. Create a new partitioned table using a standard SQL query
 
 C. Create a new view over events_partitioned using standard SQL
 
-D. Create a service account for the ODBC connection to use for authentication
+#### D. Create a service account for the ODBC connection to use for authentication
 
 E. Create a Google Cloud Identity and Access Management (Cloud IAM) role for the ODBC connection and shared a€eventsa€
    
@@ -612,18 +562,7 @@ data using BigQuery directly.
 D. Use the Storage Transfer Service to copy data from the AWS S3 buckets to Cloud Storage buckets. Create external tables over the Cloud Storage data and query the
 data using BigQuery directly.
    
-######################################### 
-‘Question: 26 _—
 
-You are building a data pipeline on Google Cloud. You need to prepare data using a casual method for a machine-learning process. You want to support a logistic
-regression model. You also need to monitor and adjust for null values, which must remain real-valued and cannot be removed. What should you do?
-
-A. Use Cloud Dataprep to find null values in sample source data. Convert all nulls to ‘none’ using a Cloud Dataproc job.
-
-C. Use Cloud Dataflow to find null values in sample source data. Convert all nulls to ‘none’ using a Cloud Dataprep job.
-
-D. Use Cloud Dataflow to find null values in sample source data. Convert all nulls to 0 using a custom script.
-   
 ######################################### 
 ---
 ## Question: 37
@@ -644,13 +583,14 @@ bucket.
 
 
 ######################################### 
-‘Question: 31, _—
+---
+## Question: 31
 
 You are designing storage for very large text files for a data pipeline on Google Cloud. You want to support ANSI SQL queries. You also want to support compression and
 parallel load from the input locations using Google recommended practices. What should you do?
 
 A. Transform text files to compressed Avro using Cloud Dataflow. Use BigQuery for storage and query.
-B. Transform text files to compressed Avro using Cloud Dataflow. Use Cloud Storage and BigQuery permanent linked tables for query.
+#### B. Transform text files to compressed Avro using Cloud Dataflow. Use Cloud Storage and BigQuery permanent linked tables for query.
 C. Compress text files to gzip using the Grid Computing Tools. Use BigQuery for storage and query.
 
 D. Compress text files to gzip using the Grid Computing Tools. Use Cloud Storage, and then import into Cloud Bigtable for query.
@@ -732,69 +672,26 @@ D. Ensure every datasource type (stream or batch) has a timestamp, and use the t
    
    
 ######################################### 
-Anything2Cloud
+---
+## Question 79
 
-Your company maintains a hybrid deployment with GCP, where analytics are performed on your anonymized customer data. The data are imported to Cloud
-
-Storage from your data center through parallel uploads to a data transfer server running on GCP. Management informs you that the daily transfers take too long and have
-asked you to fix the problem. You want to maximize transfer speeds. Which action should you take?
+Your company maintains a hybrid deployment with GCP, where analytics are performed on your anonymized customer data. The data are imported to Cloud Storage from your data center through parallel uploads to a data transfer server running on GCP. Management informs you that the daily transfers take too long and have asked you to fix the problem. You want to maximize transfer speeds. Which action should you take?
 
 A. Increase the CPU size on your server.
 
 B. Increase the size of the Google Persistent Disk on your server.
-C. Increase your network bandwidth from your datacenter to GCP,
+#### C. Increase your network bandwidth from your datacenter to GCP,
 
 D. Increase your network bandwidth from Compute Engine to Cloud Storage.
-   
+
 ######################################### 
-‘Question: 4 ——_
-
-CFO Statement -
-
-The project is too large for us to maintain the hardware and software required for the data and analysis. Also, we cannot afford to staff an operations team to monitor so
-many data feeds, so we will rely on automation and infrastructure. Google Cloud's machine learning will allow our quantitative researchers to work on our high-value
-problems instead of problems with our data pipelines.
-
-MJTelco is building a custom interface to share data. They have these requirements:
-
-1. They need to do aggregations over their petabyte-scale datasets.
-
-2. They need to scan specific time range rows with a very fast response time (milliseconds).
-
-Which combination of Google Cloud Platform products should you recommend?
-
-A. Cloud Datastore and Cloud Bigtable
-
-B. Cloud Bigtable and Cloud SQL
-
-C. BigQuery and Cloud Bigtable
-D. BigQuery and Cloud Storage
-   
-######################################### 
-‘Question: 45 _—
-
-After migrating ETL jobs to run on BigQuery, you need to verify that the output of the migrated jobs is the same as the output of the original. You've loaded a table
-
-containing the output of the original job and want to compare the contents with output from the migrated job to show that they are identical. The tables do not contain a
-primary key column that would enable you to join them together for comparison.
-What should you do?
-
-A. Select random samples from the tables using the RAND() function and compare the samples.
-
-B. Select random samples from the tables using the HASH() function and compare the samples.
-
-\CaUse'@'Dataproe’cluster'and the BigQuery:Hadoop connector to read the data from eaGh table'and Galoulatea Hash from nontimestamp columns or the tabletatter
-“sorting. Compare the hashes of each table.
-
-D. Create stratified random samples using the OVER() function and compare equivalent samples from each table.
-   
-######################################### 
-‘Question: 32, _—
+---
+## Question: 32
 
 You are developing an application on Google Cloud that will automatically generate subject labels for users’ blog posts. You are under competitive pressure to add this
 feature quickly, and you have no additional developer resources. No one on your team has experience with machine learning. What should you do?
 
-A. Call the Cloud Natural Language API from your application. Process the generated Entity Analysis as labels.
+#### A. Call the Cloud Natural Language API from your application. Process the generated Entity Analysis as labels.
 B. Call the Cloud Natural Language API from your application. Process the generated Sentiment Analysis as labels.
 
 C. Build and train a text classification model using TensorFlow. Deploy the model using Cloud Machine Learning Engine. Call the model from your application and
@@ -961,29 +858,16 @@ C. Add a trya€} catch block to your DoFn that transforms the data, write erron
 
 \Dedddiadiatvcoich blockslo youl Bokn that tenses Wie alg a sareideoupustaicrenteiniollectendial ca be Sioied ie bub /Subiaices
    
+
 ######################################### 
-Anything2Cloud
-
-Your organization has been collecting and analyzing data in Google BigQuery for 6 months. The majority of the data analyzed is placed in a time-partitioned table named
-events_partitioned. To reduce the cost of queries, your organization created a view called events, which queries only the last 14 days of data. The view is described in
-
-legacy SQL. Next month, existing applications will be connecting to BigQuery to read the events data via an ODBC connection. You need to ensure the applications can
-connect. Which two actions should you take? (Choose two.)
-
-A. Create a new view over events using standard SQL
-B. Create a new partitioned table using a standard SQL query
-D. Create a service account for the ODBC connection to use for authentication
-
-E. Create a Google Cloud Identity and Access Management (Cloud IAM) role for the ODBC connection and shared a€eventsa€
-   
-######################################### 
-‘Question: 26 ——_
+---
+## Question: 26 ——_
 
 You are building a data pipeline on Google Cloud. You need to prepare data using a casual method for a machine-learning process. You want to support a logistic
 regression model. You also need to monitor and adjust for null values, which must remain real-valued and cannot be removed. What should you do?
 
 A. Use Cloud Dataprep to find null values in sample source data. Convert all nulls to ‘none’ using a Cloud Dataproc job.
-B. Use Cloud Dataprep to find null values in sample source data. Convert all nulls to 0 using a Cloud Dataprep job.
+#### B. Use Cloud Dataprep to find null values in sample source data. Convert all nulls to 0 using a Cloud Dataprep job.
 C. Use Cloud Dataflow to find null values in sample source data. Convert all nulls to ‘none’ using a Cloud Dataprep job.
 
 D. Use Cloud Dataflow to find null values in sample source data. Convert all nulls to 0 using a custom script.
@@ -1026,55 +910,31 @@ C. Use the bg command-line tool to load the JSON and CSV files into BigQuery tab
 
 D. Grant object level access to the CSV and JSON files in Cloud Storage.
    
+
 ######################################### 
-‘Question: 8 ——_
+---
 
-You are migrating a large number of files from a public HTTPS endpoint to Cloud Storage. The files are protected from unauthorized access using signed URLs. You
-created a TSV file that contains the list of object URLs and started a transfer job by using Storage Transfer Service. You notice that the job has run for a long time and
-eventually failed. Checking the logs of the transfer job reveals that the job was running fine until one point, and then it failed due to HTTP 403 errors on the remaining
-files. You verified that there were no changes to the source system. You need to fix the problem to resume the migration process. What should you do?
-
-A. Set up Cloud Storage FUSE, and mount the Cloud Storage bucket on a Compute Engine instance. Remove the completed files from the TSV file. Use a shell script to
-iterate through the TSV file and download the remaining URLs to the FUSE mount point.
-
-B. Renew the TLS certificate of the HTTPS endpoint. Remove the completed files from the TSV file and rerun the Storage Transfer Service job.
-
-D. Update the file checksums in the TSV file from using MD5 to SHA256. Remove the completed files from the TSV file and rerun the Storage Transfer Service job.
-   
-######################################### 
-‘Question: 38 _—
+## Question: 38 _—
 
 Your neural network model is taking days to train. You want to increase the training speed. What can you do?
 
 A. Subsample your test dataset.
-B. Subsample your training dataset.
+#### B. Subsample your training dataset.
 C. Increase the number of input features to your model.
 
 D. Increase the number of layers in your neural network.
+
    
 ######################################### 
-Anything2Cloud
-
-Your company maintains a hybrid deployment with GCP, where analytics are performed on your anonymized customer data. The data are imported to Cloud
-
-Storage from your data center through parallel uploads to a data transfer server running on GCP. Management informs you that the daily transfers take too long and have
-asked you to fix the problem. You want to maximize transfer speeds. Which action should you take?
-
-A. Increase the CPU size on your server.
-B. Increase the size of the Google Persistent Disk on your server.
-C. Increase your network bandwidth from your datacenter to GCP.
-
-D. Increase your network bandwidth from Compute Engine to Cloud Storage.
-   
-######################################### 
-‘Question: 34 ——_
+---
+## Question: 34
 
 You are designing storage for two relational tables that are part of a 10-TB database on Google Cloud. You want to support transactions that scale horizontally.
 You also want to optimize data for range queries on non-key columns. What should you do?
 
 A. Use Cloud SQL for storage. Add secondary indexes to support query patterns.
 B. Use Cloud SQL for storage. Use Cloud Dataflow to transform data to support query patterns.
-C. Use Cloud Spanner for storage. Add secondary indexes to support query patterns.
+#### C. Use Cloud Spanner for storage. Add secondary indexes to support query patterns.
 
 D. Use Cloud Spanner for storage. Use Cloud Dataflow to transform data to support query patterns.
    
@@ -1193,32 +1053,21 @@ C. Java using MapReduce
 D. Python using MapReduce
    
 ######################################### 
-‘Question: 35 _—
+---
+## Question: 35 
 
 Your financial services company is moving to cloud technology and wants to store 50 TB of financial time-series data in the cloud. This data is updated frequently and
 
 new data will be streaming in all the time. Your company also wants to move their existing Apache Hadoop jobs to the cloud to get insights into this data.
 Which product should they use to store the data?
 
-A. Cloud Bigtable
+#### A. Cloud Bigtable
 B. Google BigQuery
 C. Google Cloud Storage
 
 D. Google Cloud Datastore
    
-######################################### 
-‘Question: 7 _—
 
-You need to connect multiple applications with dynamic public IP addresses to a Cloud SQL instance. You configured users with strong passwords and enforced the SSL
-connection to your Cloud SQL instance. You want to use Cloud SQL public IP and ensure that you have secured connections. What should you do?
-
-A. Add CIDR 0.0.0.0/0 network to Authorized Network. Use Identity and Access Management (IAM) to add users.
-
-B. Add all application networks to Authorized Network and regularly update them.
-
-‘C. Leave the Authorized Network empty. Use Cloud SQL Auth proxy on all applications.
-
-D. Add CIDR 0.0.0.0/0 network to Authorized Network. Use Cloud SQL Auth proxy on all applications.
    
 ######################################### 
 Anything2Cloud
