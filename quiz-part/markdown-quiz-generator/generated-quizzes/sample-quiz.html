@@ -73,8 +73,8 @@ Which combination of Google Cloud Platform products should you recommend?
 <p>You are using Google BigQuery as your data warehouse. Your users report that the following simple query is running very slowly, no matter when they run the query: SELECT country, state, city FROM [myproject:mydataset.mytable] GROUP BY country. You check the query plan for the query and see the following output in the Read section of Stage:1: What is the most likely cause of the delay for this query?</p>
 <ul class="radio-list">
 <li><label><input type="radio" data-question="1" data-content="0" /> A. Users are running too many concurrent queries in the system</label></li>
-<li><label><input type="radio" data-question="1" data-content="0" /> </label></li>
-<li><label><input type="radio" data-question="1" data-content="0" /> </label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /> B. Switch to TFRecords formats (appr. 200MB per file) instead of parquet files.</label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /> C. Switch from HDDs to SSDs, copy initial data from GCS to HDFS, run the Spark job and copy results back to GCS.</label></li>
 <li><label><input type="radio" data-question="1" data-content="0" /> </label></li>
 </ul>
 </li>
