@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        code, pre {
+            font-family: monospace;
+        }
+        h1 code,
+        h2 code,
+        h3 code,
+        h4 code,
+        h5 code,
+        h6 code {
+            font-size: inherit;
+        }
+        ul li {
+            list-style-type: none;
+        }
+        table {
+        @extend .table;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="form-row">
+        <div class="container">
+            <h1>GCP Data engineer test part3</h1>
+<hr>
+<ol>
+<li>
+<p>You work for a manufacturing plant that batches application log files together into a single log file once a day at 2:00 AM. You have written a Google Cloud Dataflow job to process that log file. You need to make sure the log file in processed once per day as inexpensively as possible. What should you do?</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /> A. Change the processing job to use Google Cloud Dataproc instead.</label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /> B. Manually start the Cloud Dataflow job each morning when you get into the office.</label></li>
+<li><label><input type="radio" data-question="0" data-content="1" /> C. Create a cron job with Google App Engine Cron Service to run the Cloud Dataflow job.</label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /> D. Configure the Cloud Dataflow job as a streaming job so that it processes the log data immediately.</label></li>
+</ul>
+</li>
+<li>
+<p>CFO Statement -
+        The project is too large for us to maintain the hardware and software required for the data and analysis. Also, we cannot afford to staff an operations team to monitor so many data feeds, so we will rely on automation and infrastructure. Google Cloud's machine learning will allow our quantitative researchers to work on our high-value problems instead of problems with our data pipelines.
+        You need to compose visualizations for operations teams with the following requirements:</p>
+<pre><code>The report must include telemetry data from all 50,000 installations for the most resent 6 weeks (sampling once every minute).
+
+The report must not be more than 3 hours delayed from live data.
+
+The actionable report should only show suboptimal links.
+
+Most suboptimal links should be sorted to the top.
+
+Suboptimal links can be grouped and filtered by regional geography.
+
+User response time to load the report must be &lt;5 seconds.
+Which approach meets the requirements?
+</code></pre>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /> A. Load the data into Google Sheets, use formulas to calculate a metric, and use filters/sorting to show only suboptimal links in a table.</label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /> B. Load the data into Google BigQuery tables, write Google Apps Script that queries the data, calculates the metric, and shows only suboptimal rows in a table in Google Sheets.</label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /> C. Load the data into Google Cloud Datastore tables, write a Google App Engine Application that queries all rows, applies a function to derive the metric, and then renders results in a table using the Google charts and visualization API.</label></li>
+<li><label><input type="radio" data-question="0" data-content="1" /> D. Load the data into Google BigQuery tables, write a Google Data Studio 360 report that connects to your data, calculates a metric, and then uses a filter expression to show only suboptimal rows in a table.</label></li>
+</ul>
+</li>
+<li>
+<p>You want to use Google Stackdriver Logging to monitor Google BigQuery usage. You need an instant notification to be sent to your monitoring tool when new data is appended to a certain table using an insert job, but you do not want to receive notifications for other tables. What should you do?</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /> A. Make a call to the Stackdriver API to list all logs, and apply an advanced filter.</label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /> B. In the Stackdriver logging admin interface, and enable a log sink export to BigQuery.</label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /> C. In the Stackdriver logging admin interface, enable a log sink export to Google Cloud Pub/Sub, and subscribe to the topic from your monitoring tool.</label></li>
+<li><label><input type="radio" data-question="0" data-content="1" /> D. Using the Stackdriver API, create a project sink with advanced log filter to export to Pub/Sub, and subscribe to the topic from your monitoring tool.</label></li>
+</ul>
+</li>
+<li>
+<p>Business owners at your company have given you a database of bank transactions. Each row contains the user ID, transaction type, transaction location, and transaction
+amount. They ask you to investigate what type of machine learning can be applied to the data. Which three machine learning applications can you use? (Choose three.)</p>
+</li>
+</ol>
+<p>F. Unsupervised learning to predict the location of a transaction.
+    - [ ] A. Supervised learning to determine which transactions are most likely to be fraudulent.
+    - [x] B. Unsupervised learning to determine which transactions are most likely to be fraudulent.
+    - [x] C. Clustering to divide the transactions into N categories based on feature similarity.
+    - [x] D. Supervised learning to predict the location of a transaction.
+    - [ ] E. Reinforcement learning to predict the location of a transaction.
+    - [x] F. Unsupervised learning to predict the location of a transaction.</p>
+<ol>
+<li>
+<p>Your company is streaming real-time sensor data from their factory floor into Bigtable and they have noticed extremely poor performance. How should the row key be redesigned to improve Bigtable performance on queries that populate real-time dashboards?</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /> A. Use a row key of the form <timestamp>.</label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /> B. Use a row key of the form <sensorid>.</label></li>
+<li><label><input type="radio" data-question="0" data-content="1" /> C. Use a row key of the form <timestamp>#<sensorid>.</label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /> D. Use a row key of the form &gt;#<sensorid>#<timestamp>.</label></li>
+</ul>
+</li>
+<li>
+<p>You want to use a database of information about tissue samples to classify future tissue samples as either normal or mutated. You are evaluating an unsupervised anomaly detection method for classifying the tissue samples. Which two characteristic support this method? (Choose two.)</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="0" data-content="1" /> A. There are very few occurrences of mutations relative to normal samples.</label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /> B. There are roughly equal occurrences of both normal and mutated samples in the database.</label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /> C. You expect future mutations to have different features from the mutated samples in the database.</label></li>
+<li><label><input type="radio" data-question="0" data-content="1" /> D. You expect future mutations to have similar features to the mutated samples in the database.</label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /> E. You already have labels for which samples are mutated and which are normal in the database.</label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+<li>
+<p>Sample</p>
+<ul class="radio-list">
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+<li><label><input type="radio" data-question="1" data-content="0" /></label></li>
+</ul>
+</li>
+</ol>
+        </div>
+    </div>
+    <div id="tg-msg" class="alert" role="alert" style="display: none">
+        <span id="tg-correct-questions"></span> Correct! <br /><b>Rating: <span id="tg-score"></span>%</b>
+    </div>
+    <div class="row">
+        <button id="check-questions" class="btn btn-lg btn-success">Check</button>
+        <button id="reset-questions" class="btn btn-link">Reset All</button>
+    </div>
+    <script type="text/javascript">$(function(){
+    $('ul.radio-list,ul.checklist,ul.textbox').each(function(i, el){
+        var questionClass = $(this).attr('class');
+        $(this).parent().addClass('question-row').addClass(questionClass);
+        if (questionClass=='radio-list') {
+            $(this).find('input[type="radio"]').attr('name', 'radio-question-' + i);
+        }
+    });
+
+    function checkQuestion() {
+        resetQuestions(true);
+        var questions = $('li.question-row');
+        var total_questions = questions.length;
+        var correct = 0;
+
+        questions.each(function(i, el) {
+            var self = $(this);
+            // Single Question.
+            if (self.hasClass('radio-list')) {
+                if (self.find('input[type="radio"][data-content="1"]:checked').length == 1) {
+                    correct += 1;
+                } else {
+                    self.addClass('text-danger');
+                }
+            }
+            // Textbox Question.
+            if(self.hasClass('textbox')) {
+                var textbox = self.find('input[type="text"]');
+                var correct_text = String(textbox.data("content")).trim().split("").reverse().join("");
+                if(String(textbox.val()).trim().toLowerCase()==correct_text.toLowerCase()) {
+                    correct += 1;
+                } else {
+                    self.addClass('text-danger');
+                    textbox.parent().find("i.text-correct").html(correct_text);
+                }
+            }
+            // Multiple selection Questions.
+            if(self.hasClass('checklist')) {
+                var total_corrects = self.find('input[type="checkbox"][data-content="1"]').length;
+                var total_incorrects = self.find('input[type="checkbox"][data-content="0"]').length;
+                var correct_selected = self.find('input[type="checkbox"][data-content="1"]:checked').length;
+                var incorrect_selected = self.find('input[type="checkbox"][data-content="0"]:checked').length;
+                var qc = +((correct_selected / total_corrects) - (incorrect_selected/total_incorrects)).toFixed(2);
+                if (qc < 0) {
+                    qc = 0;
+                }
+                correct += qc;
+                if (qc == 0) {
+                    self.addClass('text-danger');
+                } else if (qc > 0 && qc < 1) {
+                    self.addClass('text-warning');
+                }
+            }
+        });
+
+        showScore(correct, total_questions);
+    }
+
+    function showScore(correct, total) {
+        var score = (correct / total).toFixed(2) * 100;
+        var msgClass = 'alert-danger';
+        if (score >= 70) {
+            msgClass = 'alert-success';
+        } else if (score >= 50) {
+            msgClass = 'alert-warning';
+        }
+        $('#tg-correct-questions').text(correct + ' out of ' + total);
+        $('#tg-score').text(score);
+        $('#tg-msg').addClass(msgClass).show();
+    }
+    function resetQuestions(keep) {
+        $('li.question-row').removeClass('text-danger').removeClass('text-warning');
+        $('i.text-correct').html('');
+        $('#tg-msg').removeClass('alert-danger').removeClass('alert-success').removeClass('alert-warning').hide();
+        if(keep === true) {
+            return;
+        }
+        $('li.question-row').find('input[type="text"]').val('');
+        $('li.question-row').find('input[type="radio"],input[type="checkbox"]').prop('checked', false);
+    }
+    $('#check-questions').on('click', checkQuestion);
+    $('#reset-questions').on('click', resetQuestions);
+
+});</script>
+</div>
+</body>
+</html>
